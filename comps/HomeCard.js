@@ -8,6 +8,7 @@ background-color: ${props=>props.bg_color};
 border-radius: 20px;
 padding-top: 10px;
 padding-left: 20px;
+margin: 10px;
 box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;`;
 
 const CardDescription = styled.p`

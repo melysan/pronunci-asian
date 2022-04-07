@@ -2,7 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-import Link from 'next/link';
+import HomeCard from '../comps/HomeCard';
+import NavBar from '../comps/NavBar';
 
 export default function Home() {
   return (
@@ -14,13 +15,16 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">My First App</a>
-        </h1>
 
+        <HomeCard />
+        <HomeCard 
+        cardbg="#5C80BC"
+        verbcolor="#5C80BC"
+        heading="History of Asian Names"
+        carddescription="Read history lessons on interesting origins of Asian names."
+        verb="Read"/>
 
-        <Link href="/homescreen">Go to Homescreen</Link>
-
+        <NavBar />
 
       </main>
 

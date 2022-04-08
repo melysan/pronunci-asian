@@ -1,8 +1,11 @@
 import logo from '../data/images'
-import Splash from '../comps/MainLogo'
+import {SplashCont, LogoMain} from '../comps/MainLogo'
 
 export default function mainSplash() {
     return (
-       <Splash/>
+        <div>
+        <SplashCont/>
+        </div>
+       
     )
 }

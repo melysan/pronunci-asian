@@ -2,11 +2,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-import HomeCard from '../comps/HomeCard';
 import NavBar from '../comps/NavBar';
 import TopBar from '../comps/TopBar';
 import SearchBar from '../comps/SearchBar';
 import Header from '../comps/Header';
+import DetailText from '../comps/DetailText';
+import HistoryTopicCard from '../comps/HistoryTopicCard';
 
 export default function Home() {
   return (
@@ -18,23 +19,34 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <TopBar
-        cogdisplay="/settings.svg"/>
+        <TopBar/>
         <SearchBar/>
         <Header
-          h1="Let's start"/>
+          h1="Topics"/>
           
-        <HomeCard />
-        <HomeCard 
-        cardbg="#5C80BC"
-        verbcolor="#5C80BC"
-        heading="History of Asian Names"
-        carddescription="Read history lessons on interesting origins of Asian names."
-        verb="Read"/>
+        <HistoryTopicCard/>
+        
+        <HistoryTopicCard
+            lang="Japanese"
+            flagimg="/JP_FLAG.svg"
+            bgimg="/Coco_Japan_Pattern.svg"/>
+
+        <HistoryTopicCard
+            lang="Korean"
+            flagimg="/SK_FLAG.svg"
+            bgimg="/Coco_SK_Pattern.svg"/>
+
+        <HistoryTopicCard
+            lang="Vietnamese"
+            flagimg="/VN_FLAG.svg"
+            bgimg="/Coco_Vietnamese_Pattern.svg"/>
+
+        <DetailText
+        p="Stay tuned for more"/>
 
         <NavBar
-          homebuttoncolor='#FC5F6C'
-          hometextcolor='#FC5F6C'
+          historybuttoncolor='#FC5F6C'
+          historytextcolor='#FC5F6C'
        />
 
       </main>

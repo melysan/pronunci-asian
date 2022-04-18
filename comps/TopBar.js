@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const TopBarBG = styled.div`
 background-color: #F2F5EA;
-width: 390px;
+width: 100vw; // 390px
 height: 60px;
 box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
 display: inline-block;
@@ -22,9 +22,10 @@ float: right;
 
 
 export default function TopBar({
+    cogdisplay = "",
 }){
 
-return <TopBarBG><BackArrowIcon src="/backarrow.svg" /> <SettingsIcon src="/settings.svg" />
+return <TopBarBG><BackArrowIcon src="/backarrow.svg" /> <SettingsIcon src={cogdisplay} />
 </TopBarBG>
 
 }

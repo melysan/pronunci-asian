@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 
 const Card = styled.div`
-width: 340px;
-height: 170px;
+width: 340px; //340px
+height: 170px; // 170px
 background-color: ${props=>props.bg_color};
 border-radius: 20px;
 padding-top: 10px;

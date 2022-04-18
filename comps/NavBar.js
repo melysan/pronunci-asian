@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 const NavBarBG = styled.div`
 background-color: #F2F5EA;
-width: 390px;
-height: 100px;
+width: 100vw; //390 px
+height: 100px; //100px
 margin-top: 20px;
 box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
 position: sticky;
@@ -85,20 +85,6 @@ const NavBarButton4 = styled.div`
 const Icon = styled.img`
 margin-top: 5px;
 `
-
-const NameContainer = styled.div`
-display: flex;
-flex-direction: row;
-justify-content: space-around;
-`
-const NavBarName = styled.div`
-font-size: 16px;
-line-height: 23px;
-text-align: center;
-color: #373A39;
-&:hover {
-    color: #FC5F6C;
-  }`
 
 export default function NavBar({
     homebuttoncolor = "#373A39",

@@ -2,11 +2,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-import HomeCard from '../comps/HomeCard';
 import NavBar from '../comps/NavBar';
 import TopBar from '../comps/TopBar';
-import SearchBar from '../comps/SearchBar';
-import Header from '../comps/Header';
+import Article from '../comps/Article';
+
 
 export default function Home() {
   return (
@@ -18,23 +17,20 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <TopBar
-        cogdisplay="/settings.svg"/>
-        <SearchBar/>
-        <Header
-          h1="Let's start"/>
-          
-        <HomeCard />
-        <HomeCard 
-        cardbg="#5C80BC"
-        verbcolor="#5C80BC"
-        heading="History of Asian Names"
-        carddescription="Read history lessons on interesting origins of Asian names."
-        verb="Read"/>
+        <TopBar/>
+
+        <Article
+            articletitle="Why is the last name Nguyễn so popular?"
+            articlelang="Vietnamese"
+            articleimg="/Coco_Nguyen.svg"
+            articletext="About 39% of Vietnamese people share the last name, Nguyễn.
+            Why? Well, back in the feudal times, kings required people to change their last names to avoid punishment and as a sign of submission. 
+            Families also changed their name to gain favours from the current dynastry. 
+            The Nguyễn dynasty was the last dynasty so no new kings forced other families to change their names from Nguyễn."/>
 
         <NavBar
-          homebuttoncolor='#FC5F6C'
-          hometextcolor='#FC5F6C'
+          historybuttoncolor='#FC5F6C'
+          historytextcolor='#FC5F6C'
        />
 
       </main>

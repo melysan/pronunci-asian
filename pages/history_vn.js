@@ -2,11 +2,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-import HomeCard from '../comps/HomeCard';
 import NavBar from '../comps/NavBar';
 import TopBar from '../comps/TopBar';
-import SearchBar from '../comps/SearchBar';
 import Header from '../comps/Header';
+import HistoryArticleCard from '../comps/HistoryArticleCard';
+
 
 export default function Home() {
   return (
@@ -18,23 +18,23 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <TopBar
-        cogdisplay="/settings.svg"/>
-        <SearchBar/>
+        <TopBar/>
+
         <Header
-          h1="Let's start"/>
+          h1="Vietnamese"/>
           
-        <HomeCard />
-        <HomeCard 
-        cardbg="#5C80BC"
-        verbcolor="#5C80BC"
-        heading="History of Asian Names"
-        carddescription="Read history lessons on interesting origins of Asian names."
-        verb="Read"/>
+        <HistoryArticleCard
+            text = "Why is the last name Nguyễn so popular?"
+            lang = "Vietnamese"/>
+
+        <HistoryArticleCard
+            text = "How to read the structure of Vietnamese names"
+            lang = "Vietnamese"
+            articleimg = "/Coco_Chalkboard.svg"/>
 
         <NavBar
-          homebuttoncolor='#FC5F6C'
-          hometextcolor='#FC5F6C'
+          historybuttoncolor='#FC5F6C'
+          historytextcolor='#FC5F6C'
        />
 
       </main>

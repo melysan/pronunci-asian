@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { useRouter } from 'next/router'
 
 let BeigeCont = styled.div`
 background-color:#F2F5EA; width:${props => props.widthsize};
@@ -33,6 +34,7 @@ let Subheader = styled.h3`
 color:${props => props.txt_cl};
 margin-right: 0;
 padding: 0;
+font-size: 18px;
 position: absolute;
 padding-left: 15px;
 `;
@@ -49,16 +51,16 @@ font-weight: normal;
 
 let CocoHead = styled.img `
 align-self: flex-end;
-height: 250px;
+height: 175px;
 width: 200px;
-margin-left: 150px;
+margin-left: 170px;
 `;
 
 let StarIcon = styled.img`
 height: 28px;
 width: 28px;
 margin-left: 290px;
-margin-top: 5px;
+margin-top: 17px;
 bottom: 0;
 `;
 
@@ -72,15 +74,18 @@ z-index: 1;
 `;
 
 let Info = styled.p`
-display:inline-block;
 padding-top: 35px;
 padding-bottom: 35px;
 padding-left: 15px;
-font-size: 14px;
+font-size: 16px;
+display: flex;
+flex-wrap: wrap;
 color:${props => props.txt_cl};
 `;
 
 export default function PronounciationCont({ w = '330px', h = '250px', subheaderinfo = 'Info', infotxt='text', cl='#5C80BC' }) {
+    const r = useRouter();
+
     return <div>
         <BeigeCont widthsize={w} heightsize={h}>
         <CountryName txt_cl={cl}>{subheaderinfo = 'Vietnamese'}</CountryName>
@@ -88,12 +93,13 @@ export default function PronounciationCont({ w = '330px', h = '250px', subheader
             <Name txt_cl={'#FC5F6C'}>{subheaderinfo='Minh'}</Name>
             <Pronounce>{infotxt='m-ing'}</Pronounce>
             <CocoInfo txt_cl={cl}>{infotxt='Tap Coco to hear pronounciation'}</CocoInfo>
-            <CocoHead src="/cocoicon.svg"></CocoHead>
+            <CocoHead src="/cocoicon.svg" onClick={()=>r.push('/namepronunciation2')}></CocoHead>
         </BeigeCont>
 
         <BeigeCont widthsize={w} heightsize={h = '102px'}>
             <Subheader txt_cl={cl}>{subheaderinfo = 'Origin of Minh'}</Subheader>
-            <Info>{infotxt='Region: Hồ Chí Minh Period: 1890-1969'}</Info>
+            <Info>{infotxt='Region: Hồ Chí Minh'}</Info>
+            <Info>{infotxt='Period: 1890-1969'}</Info>
         </BeigeCont>
 
         <BeigeCont widthsize={w} heightsize={h = '176px'}>

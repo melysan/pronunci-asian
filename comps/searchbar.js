@@ -5,7 +5,7 @@ background-color: #F2F5EA;
 width: 330px;
 height: 60px;
 border-radius: 47px;
-margin: 30px;
+margin: 10px;
 display: inline-block;`
 
 const SearchIcon = styled.img`

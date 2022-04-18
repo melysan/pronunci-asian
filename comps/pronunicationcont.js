@@ -8,8 +8,7 @@ border-radius: 18px;
 margin: 15px;
 display:flex;
 flex-wrap: wrap;
-box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-z-index: -2;`;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;`;
 ;
 
 let Name = styled.h2`
@@ -48,6 +47,7 @@ padding-left: 15px;
 font-size: 18px;
 font-weight: normal;
 `;
+
 
 let CocoHead = styled.img `
 align-self: flex-end;

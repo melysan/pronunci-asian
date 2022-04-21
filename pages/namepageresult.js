@@ -2,14 +2,25 @@
 import Header from "../comps/heading"
 import NameCard from "../comps/namecardcont"
 import styles from '../styles/Home.module.css'
+import SearchBar from '../comps/SearchBar'
+import TopBar from '../comps/TopBar'
+import { useRouter } from 'next/router'
+import NavBar from '../comps/NavBar';
+
+
 
 export default function NamePageResults() {
+    const r = useRouter();
     return <div>
+                <TopBar></TopBar>
         <div className={styles.main}>
             <Header txt="Vietnamese"></Header>
             <SearchBar></SearchBar>
             <NameCard></NameCard>
         
         </div>
+        <NavBar namebuttoncolor='#FC5F6C'
+          nametextcolor='#FC5F6C'>
+            </NavBar>
     </div>
 }

@@ -1,3 +1,4 @@
+
 .container {
   padding: 0 2rem;
 }
@@ -10,6 +11,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.gridcontainer {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 16px 16px; 
 }
 
 .footer {

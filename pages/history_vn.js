@@ -18,7 +18,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <TopBar/>
+        <TopBar
+        backto="/history"/>
 
         <Header
           h1="Vietnamese"/>
@@ -26,7 +27,7 @@ export default function Home() {
         <HistoryArticleCard
             text = "Why is the last name Nguyễn so popular?"
             lang = "Vietnamese"
-            where ="/history_vn"/>
+            where ="/history_article"/>
 
         <HistoryArticleCard
             text = "How to read the structure of Vietnamese names"

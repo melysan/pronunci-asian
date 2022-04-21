@@ -1,3 +1,4 @@
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -5,4 +6,4 @@ const nextConfig = {
     styledComponents:true
   }
 }
-module.exports = nextConfig
+

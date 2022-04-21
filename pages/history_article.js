@@ -17,7 +17,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <TopBar/>
+        <TopBar
+        backto="/history_vn"/>
 
         <Article
             articletitle="Why is the last name Nguyễn so popular?"

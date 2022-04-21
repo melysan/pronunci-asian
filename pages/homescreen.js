@@ -23,12 +23,14 @@ export default function Home() {
 
       <main className={styles.main}>
         <TopBar
-        cogdisplay="/settings.svg"/>
+        cogdisplay="/settings.svg"
+        backto="/index"/>
         <SearchBar/>
         <Header
           h1="Let's start"/>
           
-        <HomeCard />
+        <HomeCard 
+        where="/namepage"/>
         <HomeCard 
         cardbg="#5C80BC"
         verbcolor="#5C80BC"

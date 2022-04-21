@@ -1,4 +1,4 @@
-import SearchBar from "../comps/searchbar"
+// import SearchBar from "../comps/searchbar"
 import Header from "../comps/heading"
 import NameCard from "../comps/namecardcont"
 import styles from '../styles/Home.module.css'

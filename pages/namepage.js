@@ -1,7 +1,7 @@
 import FlagCont from '../comps/countriescont'
 import Header from '../comps/heading'
 import styles from '../styles/Home.module.css'
-import SearchBar from '../comps/searchbar'
+// import SearchBar from '../comps/searchbar'
 
 export default function CountriesOptions() {
 

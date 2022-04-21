@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
 
-
 const Card = styled.div`
 width: 340px; //340px
 height: 170px; // 170px

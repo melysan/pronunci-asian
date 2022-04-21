@@ -5,5 +5,4 @@ const nextConfig = {
     styleComponents:true
   }
 }
-
 module.exports = nextConfig

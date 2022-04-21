@@ -25,7 +25,7 @@ color: #FC5F6C;
 `;
 
 export function Head({
-    txt='test'
+    txt='test',
 }){
     return(
         <IntroHead>

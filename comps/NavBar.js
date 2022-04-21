@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
 
 const NavBarBG = styled.div`
 background-color: #F2F5EA;
@@ -96,23 +97,25 @@ export default function NavBar({
     historytextcolor = "#373A39",
     favetextcolor = "#373A39",
 }) {
+    const r = useRouter();
+    const {page,type} = r.query;
 
     return <NavBarBG>
 
         <NavBarButtonContainer>
-            <NavBarButton 
+            <NavBarButton onClick={() => r.push("/homescreen")}
             homebutton_color={homebuttoncolor}
             hometext_color={hometextcolor}><Icon src="/home.svg" />Home</NavBarButton>
 
-            <NavBarButton2 
+            <NavBarButton2  onClick={() => r.push("/name")}
             namebutton_color={namebuttoncolor}
             hometext_color={nametextcolor}><Icon src="/nametag.svg" />Names</NavBarButton2>
 
-            <NavBarButton3 
+            <NavBarButton3 onClick={() => r.push("/history")}
             historybutton_color={historybuttoncolor}
             historytext_color={historytextcolor}><Icon src="/history.svg" />History</NavBarButton3>
 
-            <NavBarButton4 
+            <NavBarButton4 onClick={() => r.push("/favorites")}
             favebutton_color={favebuttoncolor}
             favetext_color={favetextcolor}><Icon src="/star.svg" />Favorites</NavBarButton4>
         </NavBarButtonContainer>

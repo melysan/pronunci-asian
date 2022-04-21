@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
 
 
 const Card = styled.div`
@@ -40,13 +41,17 @@ export default function HomeCard({
     verbcolor="#FC5F6C",
     heading="Pronounce Asian Names",
     carddescription="Learn how to pronounce Asian names and the meaning behind them.",
-    verb="Learn"
+    verb="Learn",
+    where = "/homescreen"
 }){
 
-return <Card bg_color={cardbg}>
+const r = useRouter();
+const {page,type} = r.query;
+
+return <Card bg_color={cardbg} onClick={() => r.push(where)}>
     <CardHeading>{heading}</CardHeading>
     <CardDescription>{carddescription}</CardDescription>
-    <CallToAction><Verb verb_color={verbcolor}>{verb}</Verb></CallToAction>
+    <CallToAction ><Verb verb_color={verbcolor}>{verb}</Verb></CallToAction>
 </Card>
 
 }

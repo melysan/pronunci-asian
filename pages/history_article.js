@@ -26,7 +26,8 @@ export default function Home() {
             articletext="About 39% of Vietnamese people share the last name, Nguyễn.
             Why? Well, back in the feudal times, kings required people to change their last names to avoid punishment and as a sign of submission. 
             Families also changed their name to gain favours from the current dynastry. 
-            The Nguyễn dynasty was the last dynasty so no new kings forced other families to change their names from Nguyễn."/>
+            The Nguyễn dynasty was the last dynasty so no new kings forced other families to change their names from Nguyễn."
+            />
 
         <NavBar
           historybuttoncolor='#FC5F6C'
@@ -35,18 +36,7 @@ export default function Home() {
 
       </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+
     </div>
   )
 }

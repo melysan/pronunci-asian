@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
+
 
 const HisTopicCard = styled.div`
 width: 330px;
@@ -46,11 +48,14 @@ export default function HistoryTopicCard({
     topiccolor="#5C80BC",
     lang="Chinese",
     flagimg="/CH_FLAG.svg",
-    bgimg="/Coco_China_Pattern.svg"
+    bgimg="/Coco_China_Pattern.svg",
+    where="/history"
     
 }){
+    const r = useRouter();
+    const {page,type} = r.query;
 
-return <HisTopicCard>
+return <HisTopicCard onClick={() => r.push(where)}>
     <HisTopicBG bg_img={bgimg}/><Flag flag_img={flagimg}/>
     <HisTopicBox><Topic topic_color={topiccolor}>{lang}</Topic></HisTopicBox>
 </HisTopicCard>

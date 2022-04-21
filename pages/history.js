@@ -39,7 +39,8 @@ export default function Home() {
         <HistoryTopicCard
             lang="Vietnamese"
             flagimg="/VN_FLAG.svg"
-            bgimg="/Coco_Vietnamese_Pattern.svg"/>
+            bgimg="/Coco_Vietnamese_Pattern.svg"
+            where="/history_vn"/>
 
         <DetailText
         p="Stay tuned for more"/>
@@ -51,18 +52,6 @@ export default function Home() {
 
       </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
 
 const HisArticleCard = styled.div`
 margin: 10px;
@@ -38,11 +39,12 @@ margin-top: 20px;
 export default function HistoryArticleCard({
     text = "Description",
     lang = "Language",
-    articleimg = "/Coco_Nguyen.svg"
+    articleimg = "/Coco_Nguyen.svg",
+    where = "/history"
     
 }){
 
-return<HisArticleCard>
+return<HisArticleCard onClick={() => r.push(where)}>
 <HisArticleImg article_img={articleimg}/>
 <FaveStar/>
   <HisArticleLang>{lang}</HisArticleLang>

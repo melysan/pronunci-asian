@@ -3,7 +3,7 @@ import { Subhead } from './IntroText';
 
 const SetHead = styled.h1`
     font-size: 24px;
-    color: #5C80BC;
+    color: ${props => props.headColor || "#5C80BC"};
     display: flex;
     margin-right: ${props => props.h1margin};
 `;
@@ -103,11 +103,14 @@ export function Volume (){
     </div>
 }
 
-export function Sound (
+export function Toggle ({
+    txt='Sound',
+    margin='2em'
+}
 ){
     return <div>
         <Wrapper2>
-            <Head txt='Sound' margin='2em'/>
+            <SetHead h1margin={margin}>{txt}</SetHead>
             <ItemWrap>
                 <Subhead txt='OFF' />
                 <Slider type='checkbox' />

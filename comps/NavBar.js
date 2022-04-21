@@ -7,7 +7,8 @@ width: 100vw; //390 px
 height: 100px; //100px
 margin-top: 20px;
 box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
-position: sticky;
+position: fixed;
+bottom:0;
 display: inline-block;`
 
 const NavBarButtonContainer = styled.div`

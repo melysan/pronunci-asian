@@ -3,7 +3,7 @@
 const nextConfig = {
   reactStrictMode: true,
   compiler:{
-    styleComponents:true
+    styledComponents:true
   }
 }
 module.exports = nextConfig

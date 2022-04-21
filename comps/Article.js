@@ -20,7 +20,7 @@ const ArticleText = styled.p`
 font-size: 18px;
 display: flex;
 justify-content: flex-start;
-margin: 5% 5% 0% 5%;
+margin: 5% 5% 15% 5%;
 `
 
 const ArticleCont = styled.div`

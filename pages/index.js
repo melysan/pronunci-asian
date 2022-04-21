@@ -5,10 +5,6 @@ import styled from 'styled-components'
 
 
 export default function mainSplash() {
-    <Head>
-    <title>Pronunci-Asian</title>
-  </Head>
-
 
     return <div> 
     <LogoMain>

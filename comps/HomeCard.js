@@ -2,12 +2,13 @@ import styled from 'styled-components';
 import { useRouter } from 'next/router';
 
 const Card = styled.div`
-width: 340px;
-height: 170px;
+width: 340px; //340px
+height: 170px; // 170px
 background-color: ${props=>props.bg_color};
 border-radius: 20px;
 padding-top: 10px;
 padding-left: 20px;
+margin: 10px;
 box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;`;
 
 const CardDescription = styled.p`
@@ -39,13 +40,17 @@ export default function HomeCard({
     verbcolor="#FC5F6C",
     heading="Pronounce Asian Names",
     carddescription="Learn how to pronounce Asian names and the meaning behind them.",
-    verb="Learn"
+    verb="Learn",
+    where = "/homescreen"
 }){
 
-return <Card bg_color={cardbg}>
+const r = useRouter();
+const {page,type} = r.query;
+
+return <Card bg_color={cardbg} onClick={() => r.push(where)}>
     <CardHeading>{heading}</CardHeading>
     <CardDescription>{carddescription}</CardDescription>
-    <CallToAction><Verb verb_color={verbcolor}>{verb}</Verb></CallToAction>
+    <CallToAction ><Verb verb_color={verbcolor}>{verb}</Verb></CallToAction>
 </Card>
 
 }

@@ -20,6 +20,9 @@ export default function Home() {
 
 
         <Link href="/homescreen">Go to Homescreen</Link>
+        <Link href="/history">Go to History</Link>
+        <Link href="/history_vn">Go to History Vietnam</Link>
+        <Link href="/history_article">Go to History Article</Link>
 
 
       </main>

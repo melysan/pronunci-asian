@@ -8,7 +8,8 @@ width: 100vw; // 390px
 height: 60px;
 box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
 display: inline-block;
-position: sticky;`
+position: fixed;
+top: 0;`
 
 const BackArrowIcon = styled.img`
 margin-top: 15px;

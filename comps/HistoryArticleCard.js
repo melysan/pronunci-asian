@@ -43,6 +43,9 @@ export default function HistoryArticleCard({
     where = "/history"
     
 }){
+  
+  const r = useRouter();
+  const {page,type} = r.query;
 
 return<HisArticleCard onClick={() => r.push(where)}>
 <HisArticleImg article_img={articleimg}/>

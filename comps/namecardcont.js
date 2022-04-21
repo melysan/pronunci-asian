@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { useRouter } from 'next/router'
 
 let NameCardBg = styled.div`
 width: 330px;
@@ -37,8 +38,9 @@ margin-top: 25px;
 `;
 
 export default function NameCard({ colorheading = '#5C80BC', country_txt = 'country', txtname = 'Name' }) {
+    const r = useRouter();
     return <div>
-        <NameCardBg>
+        <NameCardBg onClick={()=>r.push('/namepronunication')}>
             <Fav src='/favorite_button.svg'></Fav>
             <CountryHeading countryheading_color={colorheading}>{country_txt = 'Vietnamese'}
                 <Name>{txtname = 'Minh'}</Name>

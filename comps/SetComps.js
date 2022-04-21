@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import { Subhead } from './IntroText';
 
-const SetHead = styled.h1`
-    font-size: 24px;
+export const SetHead = styled.h1`
+    font-size: ${props => props.fontSize || '24px'};
     color: ${props => props.headColor || "#5C80BC"};
     display: flex;
     margin-right: ${props => props.h1margin};
+    font-weight: ${props => props.h1Weight || 'bold'}
 `;
 
 const SetSub = styled(SetHead)`
@@ -17,13 +18,13 @@ const Slider = styled.input`
 
 `;
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
     width: 388px;
     height: 60px;
     margin: 0.2em;
     // background-color: red;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
-    display: flex;
+    display: ${props => props.Display || 'flex'}
     justify-content: center;
     align-items: center;
 `
@@ -74,11 +75,14 @@ const Select = styled.select`
 
 export function Head({
     txt='lorem',
-    margin=''
+    margin='',
+    color='',
+    weight='',
+    size=''
 }
 ){
     return (
-    <SetHead h1margin={margin}>{txt}</SetHead>
+    <SetHead h1margin={margin} headColor={color} h1Weight={weight} fontSize={size}>{txt}</SetHead>
 )
 
 }

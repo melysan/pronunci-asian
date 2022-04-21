@@ -19,7 +19,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <TopBar/>
+        <TopBar
+        backto="/homescreen"/>
         <SearchBar/>
         <Header
           h1="Topics"/>

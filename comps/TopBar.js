@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
+
 
 const TopBarBG = styled.div`
 background-color: #F2F5EA;
@@ -23,9 +25,13 @@ float: right;
 
 export default function TopBar({
     cogdisplay = "",
+    backto = "/homescreen"
 }){
 
-return <TopBarBG><BackArrowIcon src="/backarrow.svg" /> <SettingsIcon src={cogdisplay} />
+    const r = useRouter();
+    const {page,type} = r.query;
+
+return <TopBarBG><BackArrowIcon src="/backarrow.svg" onClick={() => r.push(backto)}/> <SettingsIcon src={cogdisplay} onClick={() => r.push("/settings")}/>
 </TopBarBG>
 
 }

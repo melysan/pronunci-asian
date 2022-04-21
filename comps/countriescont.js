@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { useRouter } from 'next/router'
 
 // let Heading = styled.h1 `color:#5C80BC; font-size: 24px;`;
 let BgCont = styled.div`
@@ -32,11 +33,11 @@ justify-content:center;
 // }
 
 export default function FlagCont({bg='#F2F5EA',img='/Chinese Coco.svg', text='Chinese'}) {
-    
+    const r = useRouter();
     return <div>
 <BgCont cl={bg}>
         <CocoImg src={img}></CocoImg>
     </BgCont>
-    <CountriesName>{text}</CountriesName>
+    <CountriesName onClick={() => r.push('/namepageresult')}>{text}</CountriesName>
     </div>
 }

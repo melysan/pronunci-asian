@@ -13,7 +13,7 @@ const SearchIcon = styled.img`
 margin-top: 18px;
 margin-right: 30px;
 float: right;
-`
+`;
 
 
 export default function SearchBar({

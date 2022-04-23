@@ -72,6 +72,36 @@ const Select = styled.select`
 
 `
 
+const FavWrapper = styled.div`
+    margin: 1em;
+    width: 247px;
+`;
+
+const FavWrapper2 = styled.div`
+    width: auto;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-around ;
+    align-items: center;
+`;
+
+const FavImg = styled.div`
+    margin: 1em;
+    background-color: #F2F5EA;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 26px;
+`
+export const PageWrap = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+`;
+
 
 export function Head({
     txt='lorem',
@@ -155,4 +185,46 @@ export function TextSize (){
         </Wrapper2>
 
     </div>
+}
+export function FontType (){
+    return <div>
+        <Wrapper2>
+            <Head txt='Font Type'/>
+            <Select>
+                <option value='' hidden>
+                    Sans Serif
+                </option>
+                <option value='1'>Serif</option>
+                <option value='2'>Comic Sans</option>
+            </Select>
+        </Wrapper2>
+
+    </div>
+}
+
+export function FavRow ({
+    topic='History',
+    language='Vietnamese',
+    article='Why is the last name Nguyễn so popular?',
+    img='/Vector.svg'
+}) {
+
+    return <FavWrapper2>
+        <FavImg>
+            <img src={img} />
+        </FavImg>
+        
+        <FavWrapper>
+            <Head txt={topic} weight='300' color='#FC5F6C'size='14px' />
+            <Head txt={language} weight='300' size='14px' /> 
+            <Head txt={article} weight='300' size='16px' color='black' />
+        </FavWrapper>
+
+    </FavWrapper2>
+}
+
+export function WrapPage() {
+    return <PageWrap>
+
+    </PageWrap>
 }

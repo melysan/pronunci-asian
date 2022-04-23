@@ -1,16 +1,21 @@
 import styled from 'styled-components'
-import { Head, SetHead, Wrapper } from '../comps/SetComps'
-
-
+import { Head, SetHead, Wrapper, FavRow, PageWrap } from '../comps/SetComps'
+import TopBar from '../comps/TopBar'
+import styles from '../styles/Home.module.css'
+import NavBar from '../comps/NavBar'
 
 export default function Favourites(){
-    return <div className='cont'>
+    return <PageWrap>
+
+        <TopBar />
         <Head txt='Favourites' margin='9em' color='' weight=''/>
-        <Wrapper>
-            <Head txt='History' weight='300' color='#FC5F6C'size='14px' />
-            <Head txt='Vietnamese' weight='300' size='14px' /> 
-            <Head txt='Why is the last name Nguyễn so popular?' weight='300' size='16px' color='black' />
-        </Wrapper>
-    </div>
+        <FavRow />
+        <FavRow topic='Name' article='Minh' img='/name.svg'/>
+        <FavRow topic='Name' article='Yuki'language='Japanese' /> 
+        <FavRow article='How to read the structure of Vietnamese names'/>
+        <NavBar />
+
+    </PageWrap>
+
 
 }

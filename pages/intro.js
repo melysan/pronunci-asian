@@ -12,7 +12,7 @@ export default function IntroPage (){
                 those who want to learn 
                 how to pronounce Asian names and
                 learn interesting history about them!' />
-        <RedButton heading='Next' where='/splashpage'/>
+        <RedButton heading='Next' where='/homescreen'/>
         <RedButton heading='Skip' />
     </div>
 }

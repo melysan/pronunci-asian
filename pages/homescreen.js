@@ -24,7 +24,7 @@ export default function Home() {
       <main className={styles.main}>
         <TopBar
         cogdisplay="/settings.svg"
-        backto="/index"/>
+        backto="/"/>
         <SearchBar/>
         <Header
           h1="Let's start"/>

@@ -108,7 +108,7 @@ export default function NavBar({
             homebutton_color={homebuttoncolor}
             hometext_color={hometextcolor}><Icon src="/home.svg" />Home</NavBarButton>
 
-            <NavBarButton2  onClick={() => r.push("/name")}
+            <NavBarButton2  onClick={() => r.push("/namepage")}
             namebutton_color={namebuttoncolor}
             hometext_color={nametextcolor}><Icon src="/nametag.svg" />Names</NavBarButton2>
 
@@ -116,7 +116,7 @@ export default function NavBar({
             historybutton_color={historybuttoncolor}
             historytext_color={historytextcolor}><Icon src="/history.svg" />History</NavBarButton3>
 
-            <NavBarButton4 onClick={() => r.push("/favorites")}
+            <NavBarButton4 onClick={() => r.push("/favourites")}
             favebutton_color={favebuttoncolor}
             favetext_color={favetextcolor}><Icon src="/star.svg" />Favorites</NavBarButton4>
         </NavBarButtonContainer>

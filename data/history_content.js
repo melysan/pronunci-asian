@@ -15,7 +15,7 @@ export const historycontent = {
         articletitle:"How to read the structure of Vietnamese names",
         articleimg:"/Coco_Chalkboard.svg",
         articlelang:"Vietnamese",
-        articletext:`Texttext`
+        articletext:`Vietnamese is always written in the order of Surname, Middle name, and then First name.`
     },
 
 }

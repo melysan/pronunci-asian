@@ -108,7 +108,7 @@ export default function NavBar({
             homebutton_color={homebuttoncolor}
             hometext_color={hometextcolor}><Icon src="/home.svg" />Home</NavBarButton>
 
-            <NavBarButton2  onClick={() => r.push("/name")}
+            <NavBarButton2  onClick={() => r.push("/namepage")}
             namebutton_color={namebuttoncolor}
             hometext_color={nametextcolor}><Icon src="/nametag.svg" />Names</NavBarButton2>
 

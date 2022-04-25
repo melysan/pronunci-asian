@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import { useRouter } from 'next/router'
-import { Volume } from '../comps/SetComps'
 import React, { useState } from 'react';
 
 
@@ -59,10 +58,10 @@ justify-content: flex-end;
 margin-left: 145px;
 `;
 
-let CocoHead = styled.img`
-height: 165px;
-width: 200px;
-`;
+// let CocoHead = styled.img`
+// height: 165px;
+// width: 200px;
+// `;
 
 let StarIcon = styled.img`
 height: 28px;
@@ -74,15 +73,7 @@ bottom: 0;
 
 let CocoInfo = styled.p`
 position: absolute;
-padding-bottom: 25px;
-padding-left: 15px;
-align-self:flex-end;
-color:${props => props.txt_cl};
-`;
-
-let CocoInfo2 = styled.p`
-position: absolute;
-padding-bottom: 5px;
+padding-bottom: 20px;
 padding-left: 15px;
 align-self:flex-end;
 color:${props => props.txt_cl};
@@ -108,11 +99,33 @@ margin: 0px;
 color:${props => props.txt_cl};
 `;
 
+let Img = styled.img `width: 30px; margin-left: 2px;`;
+let Img2 = styled.img `width: 25px;`;
 
-function ClickCoco () {
-    const state = changecolor();
+
+let SliderCont = styled.div`
+
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 15px;
+padding-top: 60px;
+
+`;
+const Slider = styled.input`
+width: 220px;
+align-self-center;
+margin: 5px;
+margin-top: 10px;
+`;
+
+export function Volume (){
+    return <SliderCont>
+        <Img src='/turtleslow.svg' />  
+            <Slider type='range'></Slider>
+        <Img2 src='/fastbunny.svg' />
+        </SliderCont>
 }
-
 
 export function Coco() {
     const r = useRouter();
@@ -122,21 +135,16 @@ export function Coco() {
 </CocoCont>
 }
 
-export default function PronounciationCont({ w = '330px', h = '250px', subheaderinfo = 'Info', infotxt = 'text', cl = '#5C80BC' }) {
+export default function PronounciationContSlider({ w = '330px', h = '250px', subheaderinfo = 'Info', infotxt = 'text', cl = '#5C80BC' }) {
     const r = useRouter();
 
     return <div>
         <BeigeCont widthsize={w} heightsize={h}>
             <CountryName txt_cl={cl}>{subheaderinfo = 'Vietnamese'}</CountryName>
             <StarIcon src="/favorite_button.svg"></StarIcon>
-            <Name txt_cl={'#FC5F6C'}>{subheaderinfo = 'Minh'}</Name>
+            <Name txt_cl={'#FC5F6C'}>{subheaderinfo = 'Minh'}<Img src="/volumeup.svg"></Img></Name>
             <Pronounce>{infotxt = 'm-ing'}</Pronounce>
-            <CocoInfo txt_cl={cl}>{infotxt = 'Tap Coco to hear'}</CocoInfo>
-            <CocoInfo2 txt_cl={cl}>{infotxt = ' pronounciation'}</CocoInfo2>
-            <Coco></Coco>
-            {/* <CocoCont>
-                <CocoHead src="/cocoicon.svg" onClick={() => r.push('/namepronunciation2')}></CocoHead>
-            </CocoCont> */}
+            <Volume></Volume>
         </BeigeCont>
 
         <BeigeCont widthsize={w} heightsize={h = '110px'}>

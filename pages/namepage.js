@@ -12,8 +12,9 @@ export default function CountriesOptions() {
     const r = useRouter();
 
     return <div>
-        <TopBar></TopBar>
         <div className={styles.main}>
+        <TopBar
+        backto="/homescreen"/>
             <Header txt='Topics'></Header>
             <SearchBar></SearchBar>
             <div className={styles.gridcontainer}>

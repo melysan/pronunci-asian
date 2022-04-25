@@ -12,15 +12,16 @@ import NavBar from '../comps/NavBar';
 export default function NamePageResults() {
     const r = useRouter();
     return <div>
-                <TopBar></TopBar>
+  
         <div className={styles.main}>
+        <TopBar
+        backto="/namepage"/>
             <Header txt="Vietnamese"></Header>
             <SearchBar></SearchBar>
             <NameCard></NameCard>
-        
-        </div>
         <NavBar namebuttoncolor='#FC5F6C'
           nametextcolor='#FC5F6C'>
             </NavBar>
+            </div>
     </div>
 }

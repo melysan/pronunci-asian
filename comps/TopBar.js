@@ -11,6 +11,7 @@ display: inline-block;
 position: sticky;
 top: 0;`
 
+
 const BackArrowIcon = styled.img`
 margin-top: 15px;
 margin-left: 25px;

@@ -1,9 +1,10 @@
 import { Head, Subhead, Parag, Color } from '../comps/IntroText';
 import { Logo  } from '../comps/MainLogo'
 import { RedButton } from '../comps/landingbuttons';
+import { WrapPage, PageWrap, PageWrap2 } from '../comps/SetComps';
 
 export default function IntroPage (){
-    return <div className='cont'>
+    return <PageWrap2>
         <Head txt='Welcome to Pronunci-Asian!' ></Head>
         <Logo img='/welcomebunny1.svg' />
         <Subhead txt='Hi, I’m Coco!' />
@@ -14,5 +15,5 @@ export default function IntroPage (){
                 learn interesting history about them!' />
         <RedButton heading='Next' where='/homescreen'/>
         <RedButton heading='Skip' />
-    </div>
+    </PageWrap2>
 }

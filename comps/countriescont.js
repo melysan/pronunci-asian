@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 
 // let Heading = styled.h1 `color:#5C80BC; font-size: 24px;`;
 
-let Cont = styled.div`
+let Cont = styled.div` 
 &:hover {
     color:#FC5F6C;
 }`; 

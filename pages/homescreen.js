@@ -8,11 +8,12 @@ import NavBar from '../comps/NavBar';
 import TopBar from '../comps/TopBar';
 import SearchBar from '../comps/SearchBar';
 import Header from '../comps/Header';
+import { PageWrap } from '../comps/SetComps';
 
 export default function Home() {
 
   return (
-    <div className={styles.container}>
+    <PageWrap>
       <Head>
         
         <title>Pronunci-Asian</title>
@@ -21,7 +22,7 @@ export default function Home() {
         <style>@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap');</style>
       </Head>
 
-      <main className={styles.main}>
+      <PageWrap>
         <TopBar
         cogdisplay="/settings.svg"
         backto="/"/>
@@ -44,8 +45,8 @@ export default function Home() {
           hometextcolor='#FC5F6C'
        />
 
-      </main>
+      </PageWrap>
 
-    </div>
+    </PageWrap>
   )
 }

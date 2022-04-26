@@ -1,21 +1,21 @@
-import styled from "styled-components";
+import styled from "styled-components"
 import { useRouter } from 'next/router'
-import { RedButton } from "./landingbuttons";
+import { RedButton } from "./landingbuttons"
+import { WrapPage } from "./SetComps";
 
 const PageCont = styled.div`
 display: flex;
 justify-content: center;
 // align-items: center;
-background-color: blue;
+// background-color: blue;
 // margin-top: 20em;
 `;
 
 const HomeCont = styled.div`
 display: flex;
 justify-content: center;
-background-color: #F2F5EA;
-width: 390px;
-height: 844px;
+width: 100vw;
+height: 100vh;
 `;
 
 const HomeLogo = styled.div`
@@ -31,10 +31,14 @@ height: 206px;
 // margin-bottom: 10em;
 display: flex;
 justify-content: center;
+align-items: center;
+// background-color: red;
 `;
 
 
-export function LogoMain(){
+export function LogoMain({
+    img = '/logomain1.svg'
+}){
 
     const r = useRouter();
 
@@ -49,8 +53,8 @@ export function LogoMain(){
                 <Img onClick={
         () => r.push('/landingpage')
     
-    } 
-                src='/logomain1.svg'/>
+    }   
+            src={img}/>
                 </HomeLogo>
             </HomeCont>
         </PageCont>
@@ -85,14 +89,14 @@ export function Land(){
 }
 
 
-export function Page() {
-    return <PageCont>
+// export function Page() {
+//     return <PageCont>
 
-    </PageCont>
-}
+//     </PageCont>
+// }
 
-export function InnerpPage() {
-    return <HomeCont>
+// export function InnerpPage() {
+//     return <HomeCont>
 
-    </HomeCont>
-}
+//     </HomeCont>
+// }

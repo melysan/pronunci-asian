@@ -5,14 +5,14 @@ import SearchBar from '../comps/SearchBar'
 import { useRouter } from 'next/router'
 import TopBar from '../comps/TopBar'
 import NavBar from '../comps/NavBar';
-
+import { PageWrap } from '../comps/SetComps'
 
 export default function CountriesOptions() {
 
     const r = useRouter();
 
     return <div>
-        <div className={styles.main}>
+        <PageWrap>
         <TopBar
         backto="/homescreen"/>
             <Header txt='Topics'></Header>
@@ -26,7 +26,7 @@ export default function CountriesOptions() {
             <NavBar namebuttoncolor='#FC5F6C'
           nametextcolor='#FC5F6C'>
             </NavBar>
-        </div>
+        </PageWrap>
     </div>
 }
 

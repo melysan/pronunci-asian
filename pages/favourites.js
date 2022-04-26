@@ -4,9 +4,10 @@ import TopBar from '../comps/TopBar'
 import styles from '../styles/Home.module.css'
 import NavBar from '../comps/NavBar'
 
+
 export default function Favourites(){
     return <PageWrap>
-
+  
         <TopBar />
         <Head txt='Favourites' margin='9em' color='' weight=''/>
         <FavRow />

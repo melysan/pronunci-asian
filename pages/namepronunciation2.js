@@ -1,4 +1,4 @@
-import { Volume } from "../comps/SetComps"
+import { PageWrap, Volume, WrapPage } from "../comps/SetComps"
 import PronounciationCont from "../comps/pronunicationcont"
 import styles from '../styles/Home.module.css'
 import TopBar from '../comps/TopBar'
@@ -12,13 +12,13 @@ import PronounciationContSlider from "../comps/contslider";
 export default function PronounciationSoundCont () {
     
     return <div>
-        <div className={styles.main}>
+        <PageWrap>
             <TopBar backto="/namepageresult"></TopBar>
 
             <PronounciationContSlider></PronounciationContSlider>
             <NavBar namebuttoncolor='#FC5F6C'
                 nametextcolor='#FC5F6C'>
             </NavBar>
-        </div>
+        </PageWrap>
     </div>
 }

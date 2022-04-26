@@ -102,6 +102,10 @@ export const PageWrap = styled.div`
     flex-direction: column;
 `;
 
+export const PageWrap2 = styled(PageWrap)`
+    margin-top: 5em;
+`;
+
 
 export function Head({
     txt='lorem',

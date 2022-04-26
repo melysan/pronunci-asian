@@ -12,6 +12,8 @@ export default function PronunciationPage() {
 
     
     return <div>
+                <style>@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap');</style>
+
         <PageWrap>
             <TopBar backto="/namepageresult"></TopBar>
 

@@ -7,6 +7,8 @@ import styled from 'styled-components'
 export default function mainSplash() {
 
     return <div> 
+                <style>@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap');</style>
+
     <LogoMain>
 
     </LogoMain>

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Subhead } from './IntroText';
+import { useRouter } from 'next/router';
 
 export const SetHead = styled.h1`
     font-size: ${props => props.fontSize || '24px'};
@@ -210,11 +211,18 @@ export function FavRow ({
     topic='History',
     language='Vietnamese',
     article='Why is the last name Nguyễn so popular?',
-    img='/Vector.svg'
+    img='/Vector.svg',
+    where='/'
 }) {
 
+    const r = useRouter();
+
     return <FavWrapper2>
-        <FavImg>
+        <FavImg
+        onClick={
+            () => r.push(where)
+        }
+        >
             <img src={img} />
         </FavImg>
         

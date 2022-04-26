@@ -5,6 +5,8 @@ import { PageWrap } from "../comps/SetComps"
 
 export default function Settings() {
     return <PageWrap>
+                <style>@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap');</style>
+
         <TopBar />
         <Head margin="9em" txt="Settings"></Head>
         <Subhead2 txt="Volume" margin='10em'></Subhead2>

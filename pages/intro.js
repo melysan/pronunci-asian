@@ -5,6 +5,8 @@ import { WrapPage, PageWrap, PageWrap2 } from '../comps/SetComps';
 
 export default function IntroPage (){
     return <PageWrap2>
+                <style>@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap');</style>
+
         <Head txt='Welcome to Pronunci-Asian!' ></Head>
         <Logo img='/welcomebunny1.svg' />
         <Subhead txt='Hi, I’m Coco!' />

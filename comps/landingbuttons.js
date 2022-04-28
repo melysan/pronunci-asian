@@ -11,6 +11,7 @@ height: 50px;
 border-radius: 11px;
 background-color: #FC5F6C;
 margin-top: 2em;
+cursor: pointer;
 `;
 
 const BtnHead = styled.h1`
@@ -22,7 +23,7 @@ font-weight: bold;
 
 export function RedButton({
     heading='Hi',
-    where = '/splashpage'
+    where = ''
 }) {
 
    

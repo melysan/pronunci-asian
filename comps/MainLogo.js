@@ -33,6 +33,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 // background-color: red;
+cursor: pointer;
 `;
 
 
@@ -80,7 +81,7 @@ export function Land(){
                 <HomeLogo>
                 <Img src='/logomain1.svg'/>
                 <RedButton heading="Introduction" where="/intro"/>
-                <RedButton heading="Get Started!"/>
+                <RedButton heading="Get Started!" where="homescreen"/>
                 </HomeLogo>
             </HomeCont>
         </PageCont>

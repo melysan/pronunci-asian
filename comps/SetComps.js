@@ -95,6 +95,7 @@ const FavImg = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 26px;
+    cursor: pointer;
 `
 export const PageWrap = styled.div`
     display: flex;
@@ -181,7 +182,7 @@ export function TextSize (){
             <Head txt='Text Size'/>
             <Select>
                 <option value='' hidden>
-                    Fonts
+                     Large
                 </option>
                 <option value='1'>Large</option>
                 <option value='2'>Medium</option>
@@ -199,8 +200,9 @@ export function FontType (){
                 <option value='' hidden>
                     Sans Serif
                 </option>
-                <option value='1'>Serif</option>
-                <option value='2'>Comic Sans</option>
+                <option value='1'>Sans Serif</option>
+                <option value='2'>Serif</option>
+                <option value='3'>Comic Sans</option>
             </Select>
         </Wrapper2>
 

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useRouter } from 'next/router'
 
 const IntroHead = styled.h1`
 text-align: center;
@@ -24,10 +25,22 @@ font-weight: bold;
 color: #FC5F6C;
 `;
 
+
 export function Head({
     txt='test',
 }){
+    
+    const r = useRouter();
+    var { page } = r.query;
+    
+    if(page === undefined ){
+        page === 0;
+    }
+
     return(
+
+        
+
         <IntroHead>
             {txt}
         </IntroHead>

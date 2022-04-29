@@ -3,7 +3,7 @@ import { Logo  } from '../../comps/MainLogo'
 import { RedButton } from '../../comps/landingbuttons';
 import { WrapPage, PageWrap, PageWrap2 } from '../../comps/SetComps';
 import { logo } from '../../data/images'
-import { name, sub } from '../../data/name_data'
+import { name, sub, intro, bold } from '../../data/name_data'
 
 import { useRouter } from 'next/router';
 
@@ -21,22 +21,40 @@ export default function IntroPage (){
 
         <Head txt={name[page].head} ></Head>
         <Logo img={logo[page].bunny} />
-        <Subhead txt='Hi, I’m Coco!' />
+        <Subhead txt={intro[page].coco} />
         <Parag txt={sub[page].subhead} />
+        <Subhead txt={bold[page].text} ></Subhead>
 
         {
             
             Number(page) < logo.length -1 &&
 
-            <RedButton heading='Next' onClick={
-                () => r.push({
+            <RedButton heading='Next' where={
+                {
                     pathname: '/intro',
                     query:{
                         page:Number(page) + 1 > logo.length-1 ? logo.length-1 : Number(page)+1
                     }
-                })
+                }
             } />
-        }        
-        <RedButton heading='Skip' where='/homescreen'/>
+        } 
+
+        {
+
+        Number(page) < logo.length -1 &&
+
+        <RedButton heading='Skip' where={{
+            pathname: '/homescreen',
+            query:{
+                page:Number(page) + 1 > logo.length-1 ? logo.length-1 : Number(page)+1
+            }
+        }}/>
+        }
+
+        {
+            Number(page) >= logo.length-1 &&
+
+            <RedButton heading='Get Started' where='/homescreen' />
+        }
     </PageWrap2>
 }

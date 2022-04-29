@@ -24,3 +24,27 @@ export const sub = [
         subhead: 'Learn about the interesting facts and history behind certain Asian names and and their conventions!'
     },
 ]
+
+export const intro = [
+    {
+        coco: 'Hi, I\'m Coco!'
+    },
+    {
+        coco: ''
+    },
+    {
+        coco: ''
+    },
+]
+
+export const bold = [
+    {
+        text: ''
+    },
+    {
+        text: 'Fret not, we are here to help!'
+    },
+    {
+        text: 'Get ready to become a history guru!'
+    },
+]

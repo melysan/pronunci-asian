@@ -1,7 +1,10 @@
 import styled from 'styled-components'
 
-let Active = styled.img``;
-let Inactive = styled.img ``;
+let Active = styled.img`
+`;
+let Inactive = styled.img `
+color: #FC5F6C;
+`;
 
 export default function ToggleFav() {
     return <div>

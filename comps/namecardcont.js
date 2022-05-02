@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
+import { FavButton } from '../comps/pronunicationcont.js'
 
 let NameCardBg = styled.div`
 width: 330px;
@@ -30,7 +31,7 @@ margin-top: 5px;
 z-index: 1;
 `;
 
-let Fav = styled.img `
+let Fav = styled.img`
 width: 28px;
 height: 28px;
 margin-left: 280px;
@@ -40,24 +41,24 @@ margin-top: 25px;
 export default function NameCard({ colorheading = '#5C80BC', country_txt = 'country', txtname = 'Name' }) {
     const r = useRouter();
     return <div>
-        <NameCardBg onClick={()=>r.push('/namepronunication')}>
-            <Fav src='/favorite_button.svg'></Fav>
+        <NameCardBg onClick={() => r.push('/namepronunication')}>
+            <FavButton></FavButton>
             <CountryHeading countryheading_color={colorheading}>{country_txt = 'Vietnamese'}
                 <Name>{txtname = 'Minh'}</Name>
             </CountryHeading>
         </NameCardBg>
         <NameCardBg>
-            <Fav src='/favorite_button.svg'></Fav>
+            <FavButton></FavButton>
             <CountryHeading countryheading_color={colorheading}>{country_txt = 'Vietnamese'}
                 <Name>{txtname = 'Nam'}</Name>
             </CountryHeading>
         </NameCardBg>
         <NameCardBg>
-            <Fav src='/favorite_button.svg'></Fav>
+            <FavButton></FavButton>
             <CountryHeading countryheading_color={colorheading}>{country_txt = 'Vietnamese'}
                 <Name>{txtname = 'Nguyen'}</Name>
             </CountryHeading>
         </NameCardBg>
-      
+
     </div>
 }

@@ -7,10 +7,16 @@ import TopBar from '../comps/TopBar'
 import { useRouter } from 'next/router'
 import NavBar from '../comps/NavBar';
 import { PageWrap } from "../comps/SetComps"
+import VietName from "../data/vietname_data.json"
 
 
 export default function NamePageResults() {
     const r = useRouter();
+    var { qnum } = r.query;
+
+    if (qnum === undefined) {
+      qnum = 0;
+    }
     return <div>
           <style>@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap');</style>
 

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { useRouter } from 'next/router'
 import { Volume } from '../comps/SetComps'
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 
 let BeigeCont = styled.div`
@@ -72,6 +72,10 @@ margin-top: 17px;
 bottom: 0;
 `;
 
+
+// // color: ${props=> props.starcl || '#FFF'};
+// background-url: ${props=> props.starcl || '/selected_fav'};
+
 let CocoInfo = styled.p`
 position: absolute;
 padding-bottom: 25px;
@@ -109,26 +113,38 @@ color:${props => props.txt_cl};
 `;
 
 
-function ClickCoco () {
-    const state = changecolor();
-}
+// function ClickCoco () {
+//     const state = changecolor();
+// }
 
+export function FavButton() {
+    const [img, setImg] = useState("/favorite_button.svg");
+
+    return <StarIcon src={img === false ? '/favorite_button.svg' : '/selected_favebutton.svg'}
+        onClick={() => setImg(!img)}
+    ></StarIcon>
+
+}
 
 export function Coco() {
     const r = useRouter();
 
     return <CocoCont>
-    <CocoHead src="/cocoicon.svg" onClick={() => r.push('/namepronunciation2')}></CocoHead>
-</CocoCont>
+        <CocoHead src="/cocoicon.svg" onClick={() => r.push('/namepronunciation2')}></CocoHead>
+    </CocoCont>
 }
 
 export default function PronounciationCont({ w = '330px', h = '250px', subheaderinfo = 'Info', infotxt = 'text', cl = '#5C80BC' }) {
     const r = useRouter();
 
+    const [color, SetColor] = useState(false)
+
     return <div>
         <BeigeCont widthsize={w} heightsize={h}>
             <CountryName txt_cl={cl}>{subheaderinfo = 'Vietnamese'}</CountryName>
-            <StarIcon src="/favorite_button.svg"></StarIcon>
+
+            <FavButton></FavButton>
+
             <Name txt_cl={'#FC5F6C'}>{subheaderinfo = 'Minh'}</Name>
             <Pronounce>{infotxt = 'm-ing'}</Pronounce>
             <CocoInfo txt_cl={cl}>{infotxt = 'Tap Coco to hear'}</CocoInfo>
@@ -141,7 +157,7 @@ export default function PronounciationCont({ w = '330px', h = '250px', subheader
 
         <BeigeCont widthsize={w} heightsize={h = '110px'}>
             <Subheader txt_cl={cl}>{subheaderinfo = 'Origin of Minh'}</Subheader>
-            <Info>{infotxt = 'Region: Hồ Chí Minh' }</Info>
+            <Info>{infotxt = 'Region: Hồ Chí Minh'}</Info>
             <Info2>{infotxt = 'Period: 1890-1969'}</Info2>
         </BeigeCont>
 

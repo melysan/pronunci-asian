@@ -4,7 +4,8 @@
     "Meaning" : "The meaning of Minh means “bright” and “clever",
     "Origin" : "Region: Hồ Chí Minh",
     "Period" : "Period: 1890-1969",
-    "Country": "Vietnam"
+    "Country": "Vietnam",
+    "Lang": "Vietnamese"
 
 },
 {
@@ -12,7 +13,8 @@
     "Meaning" : "The meaning of Nam means “South”",
     "Origin" : "Region: Hồ Chí Minh",
     "Period" : "Period: 1801-1900",
-    "Country": "Vietnam"
+    "Country": "Vietnam",
+    "Lang": "Vietnamese"
 
 },
 {
@@ -20,7 +22,8 @@
     "Meaning" : "The meaning of Nguyen means 'musical instrument",
     "Origin" : "Region: Hồ Chí Minh",
     "Period" : "Period: 1890-1969",
-    "Country": "Vietnam"
+    "Country": "Vietnam",
+    "Lang": "Vietnamese"
 
 }]
 

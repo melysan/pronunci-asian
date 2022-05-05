@@ -25,7 +25,9 @@ export default function NamePageResults() {
         backto="/namepage"/>
             <SearchBar></SearchBar>
             <Header h1='Vietnamese'></Header>
+
             <NameCard></NameCard>
+
         <NavBar namebuttoncolor='#FC5F6C'
           nametextcolor='#FC5F6C'>
             </NavBar>

@@ -2,6 +2,8 @@ import styled from "styled-components"
 import { useRouter } from 'next/router'
 import { Volume } from '../comps/SetComps'
 import { useState } from 'react';
+import { VietName } from "../data/Name_data.js";
+
 
 
 let BeigeCont = styled.div`
@@ -134,10 +136,16 @@ export function Coco() {
     </CocoCont>
 }
 
-export default function PronounciationCont({ w = '330px', h = '250px', subheaderinfo = 'Info', infotxt = 'text', cl = '#5C80BC' }) {
+export default function PronounciationCont({ w = '330px', h = '250px', subheaderinfo = 'Info', nametxt= 'name', infotxt = 'text', cl = '#5C80BC'}) {
     const r = useRouter();
 
-    const [color, SetColor] = useState(false)
+    var { item } = r.query;
+
+
+    if (item === undefined) {
+      item = 0;
+    }
+
 
     return <div>
         <BeigeCont widthsize={w} heightsize={h}>
@@ -145,14 +153,11 @@ export default function PronounciationCont({ w = '330px', h = '250px', subheader
 
             <FavButton></FavButton>
 
-            <Name txt_cl={'#FC5F6C'}>{subheaderinfo = 'Minh'}</Name>
+            <Name txt_cl={'#FC5F6C'}> {nametxt =VietName[0].Name }</Name>
             <Pronounce>{infotxt = 'm-ing'}</Pronounce>
             <CocoInfo txt_cl={cl}>{infotxt = 'Tap Coco to hear'}</CocoInfo>
             <CocoInfo2 txt_cl={cl}>{infotxt = ' pronounciation'}</CocoInfo2>
             <Coco></Coco>
-            {/* <CocoCont>
-                <CocoHead src="/cocoicon.svg" onClick={() => r.push('/namepronunciation2')}></CocoHead>
-            </CocoCont> */}
         </BeigeCont>
 
         <BeigeCont widthsize={w} heightsize={h = '110px'}>

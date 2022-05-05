@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import { FavButton } from '../comps/pronunicationcont.js'
+// import VietName from "../data/vietname_data.json"
+import { VietName } from '../data/Name_data.js';
 
 let NameCardBg = styled.div`
 width: 330px;
@@ -38,25 +40,39 @@ margin-left: 280px;
 margin-top: 25px;
 `;
 
-export default function NameCard({ colorheading = '#5C80BC', country_txt = 'country', txtname = 'Name' }) {
+export default function NameCard({ colorheading = '#5C80BC', country_txt = 'country', txtname = 'Name', arr = [] }) {
     const r = useRouter();
+
+    var { item } = r.query;
+
+    if (item === undefined) {
+      item = 0;
+    }
+    
     return <div>
-        <NameCardBg onClick={() => r.push('/namepronunication')}>
+        <NameCardBg onClick={() => r.push( {
+            pathname: '/namepronunication', 
+            query: { item: 'Minh'}
+        })} > 
             <FavButton></FavButton>
-            <CountryHeading countryheading_color={colorheading}>{country_txt = 'Vietnamese'}
-                <Name>{txtname = 'Minh'}</Name>
+            <CountryHeading countryheading_color={colorheading}>{country_txt = VietName[item].Lang}
+                <Name>{txtname = VietName[item].Name}</Name>
             </CountryHeading>
         </NameCardBg>
-        <NameCardBg>
+
+        <NameCardBg onClick={() => r.push( {pathname:'/namepronunication', query: { item: 'Nam'}
+        })}>
             <FavButton></FavButton>
-            <CountryHeading countryheading_color={colorheading}>{country_txt = 'Vietnamese'}
-                <Name>{txtname = 'Nam'}</Name>
+            <CountryHeading countryheading_color={colorheading}>{country_txt = VietName[item].Lang}
+                <Name>{txtname = VietName[item + 1].Name}</Name>
             </CountryHeading>
         </NameCardBg>
-        <NameCardBg>
+        
+        <NameCardBg onClick={() => r.push({pathname:'/namepronunication', query: { item: 'Nguyen'}
+        })}>
             <FavButton></FavButton>
-            <CountryHeading countryheading_color={colorheading}>{country_txt = 'Vietnamese'}
-                <Name>{txtname = 'Nguyen'}</Name>
+            <CountryHeading countryheading_color={colorheading}>{country_txt = VietName[item].Lang}
+                <Name>{txtname = VietName[item + 2].Name}</Name>
             </CountryHeading>
         </NameCardBg>
 

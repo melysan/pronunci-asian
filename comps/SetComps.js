@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Subhead } from './IntroText';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 export const SetHead = styled.h1`
     font-size: ${props => props.fontSize || '24px'};
@@ -108,6 +109,42 @@ export const PageWrap2 = styled(PageWrap)`
     margin-top: 5em;
 `;
 
+export const SwitchCont = styled.div`
+    padding: 20px;
+`;
+
+export const SwitchBox = styled.div`
+    background: ${props => props.bg || '#AAA'}; //active = #CCF, inactice = #CCC
+    width: 100px;
+    height: 30px;
+    display: flex;
+    border-radius: 25px;
+    align-items: center;
+    transition: left 0.3s, background 0.3s;
+`;
+
+export const Tog = styled.div`
+    background: ${props => props.bg}; //active = #AAF, inactive = #AAA
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    left: ${props => props.left || '0px'}; //active = 50px, inactive 0px;
+    transition: left 0.3s, background 0.3s;
+`;
+
+const switch_data = {
+    active: { 
+      boxbg:'#CCF',
+      togglebg: '#AAF',
+      toggleleft: '50px'
+    },
+    inactive: {
+      boxbg:'#CCC',
+      togglebg: '#AAA',
+      toggleleft: '0px'
+    }
+  }
 
 export function Head({
     txt='lorem',
@@ -120,6 +157,39 @@ export function Head({
     return (
     <SetHead h1margin={margin} headColor={color} h1Weight={weight} fontSize={size}>{txt}</SetHead>
 )
+
+}
+
+export function Switch({
+    active=false,
+}){
+    const [switchState, setSwitch] = useState('inactive');
+
+    useEffect(()=>{
+        if (active === true){
+            setSwitch('active');
+        } else {
+            setSwitch('inactive');
+        }
+
+    }, [active]);
+
+    return <SwitchCont>
+        <SwitchBox
+        bg={switch_data[switchState].boxbg}
+        >
+
+            <Toggle
+            bg={switch_data[switchState].togglebg}
+            left={switch_data[switchState].toggleleft}
+            onClick={
+                () => setSwitch(switchState === 'inactive' ? 'active' : 'inactive')
+            }
+            />
+
+        </SwitchBox>
+
+    </SwitchCont>
 
 }
 
@@ -145,15 +215,46 @@ export function Volume (){
 
 export function Toggle ({
     txt='Sound',
-    margin='2em'
+    margin='2em',
+    active=false,
 }
 ){
+
+    const [switchState, setSwitch] = useState('inactive');
+
+    useEffect(()=>{
+        if (active === true){
+            setSwitch('active');
+        } else {
+            setSwitch('inactive');
+        }
+
+    }, [active]);
+
+
+
+
     return <div>
         <Wrapper2>
             <SetHead h1margin={margin}>{txt}</SetHead>
             <ItemWrap>
                 <Subhead txt='OFF' />
-                <Slider type='checkbox' />
+                    <SwitchCont>
+                        <SwitchBox
+                        bg={switch_data[switchState].boxbg}
+                        >
+
+                            <Toggle
+                            bg={switch_data[switchState].togglebg}
+                            left={switch_data[switchState].toggleleft}
+                            onClick={
+                                () => setSwitch(switchState === 'inactive' ? 'active' : 'inactive')
+                            }
+                            />
+
+                        </SwitchBox>
+
+                    </SwitchCont>
                 <Subhead txt='ON' />
             </ItemWrap>
         </Wrapper2>

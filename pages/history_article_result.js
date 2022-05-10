@@ -20,7 +20,7 @@ export default function Home() {
 
       <PageWrap>
         <TopBar
-        backto="/history_vn"/>
+        backto="/history_articles"/>
 
         <Article
             articletitle="Why is the last name Nguyễn so popular?"

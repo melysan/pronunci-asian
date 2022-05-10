@@ -24,7 +24,6 @@ export default function Home() {
 
       <PageWrap>
         <TopBar
-        cogdisplay="/settings.svg"
         backto="/"/>
         <SearchBar/>
         <Header

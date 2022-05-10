@@ -30,12 +30,13 @@ export default function Home() {
         <HistoryArticleCard
             text = "Why is the last name Nguyễn so popular?"
             lang = "Vietnamese"
-            where ="/history_article"/>
+            where ="/history_article_result"/>
 
         <HistoryArticleCard
             text = "How to read the structure of Vietnamese names"
             lang = "Vietnamese"
-            articleimg = "/Coco_Chalkboard.svg"/>
+            articleimg = "/Coco_Chalkboard.svg"
+            where ="/history_article_result"/>
 
         <NavBar
           historybuttoncolor='#FC5F6C'

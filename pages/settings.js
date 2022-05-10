@@ -15,6 +15,8 @@ export default function Settings() {
         <Toggle txt='Dark Mode' margin=""/>
         <TextSize />
         <FontType />
-    <NavBar />
+    <NavBar 
+        setbuttoncolor='#FC5F6C'
+        settextcolor='#FC5F6C'/>
 </ PageWrap>
 }

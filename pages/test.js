@@ -1,7 +1,7 @@
 import ToggleFav from "../comps/favorite_button";
 import React, { useState } from "react";
 
-function App() {
+export default function App() {
   const [active, setActive] = useState(false);
 
   const handleChangeActive = () => {

@@ -1,4 +1,4 @@
-import { Head, Subhead2, Volume, Toggle, DarkMode, TextSize, FontType } from "../comps/SetComps"
+import { Head, Subhead2, Volume, Toggle, DarkMode, TextSize, FontType, Switch } from "../comps/SetComps"
 import TopBar from "../comps/TopBar"
 import NavBar from "../comps/NavBar"
 import { PageWrap } from "../comps/SetComps"
@@ -13,6 +13,7 @@ export default function Settings() {
         <Volume></Volume>
         <Toggle />
         <Toggle txt='Dark Mode' margin=""/>
+
         <TextSize />
         <FontType />
     <NavBar />

@@ -115,8 +115,8 @@ export const SwitchCont = styled.div`
 
 export const SwitchBox = styled.div`
     background: ${props => props.bg || '#AAA'}; //active = #CCF, inactice = #CCC
-    width: 100px;
-    height: 30px;
+    width: 34px;
+    height: 14px;
     display: flex;
     border-radius: 25px;
     align-items: center;
@@ -125,8 +125,9 @@ export const SwitchBox = styled.div`
 
 export const Tog = styled.div`
     background: ${props => props.bg}; //active = #AAF, inactive = #AAA
-    width: 50px;
-    height: 50px;
+    box-shadow: 0px 0.1px 0.3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     position: relative;
     left: ${props => props.left || '0px'}; //active = 50px, inactive 0px;
@@ -135,13 +136,13 @@ export const Tog = styled.div`
 
 const switch_data = {
     active: { 
-      boxbg:'#CCF',
-      togglebg: '#AAF',
-      toggleleft: '50px'
+      boxbg:'#FF3333',
+      togglebg: '#FF3333',
+      toggleleft: '17px'
     },
     inactive: {
       boxbg:'#CCC',
-      togglebg: '#AAA',
+      togglebg: '#FFFFFF',
       toggleleft: '0px'
     }
   }
@@ -161,7 +162,7 @@ export function Head({
 }
 
 export function Switch({
-    active=false,
+    active=false
 }){
     const [switchState, setSwitch] = useState('inactive');
 
@@ -174,12 +175,23 @@ export function Switch({
 
     }, [active]);
 
+    // useEffect(()=>{
+    //     if(switchState === 'inactive'){
+    //       onChange(false)
+    //     } else {
+    //       onChange(true)
+    //     }
+    //   });
+    
+
     return <SwitchCont>
+
+    
         <SwitchBox
         bg={switch_data[switchState].boxbg}
         >
 
-            <Toggle
+            <Tog
             bg={switch_data[switchState].togglebg}
             left={switch_data[switchState].toggleleft}
             onClick={
@@ -244,7 +256,7 @@ export function Toggle ({
                         bg={switch_data[switchState].boxbg}
                         >
 
-                            <Toggle
+                            <Tog
                             bg={switch_data[switchState].togglebg}
                             left={switch_data[switchState].toggleleft}
                             onClick={

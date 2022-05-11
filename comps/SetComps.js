@@ -228,6 +228,8 @@ export function Volume (){
 export function Toggle ({
     txt='Sound',
     margin='2em',
+    weight='400',
+    color='#FC5F6C',
     active=false,
 }
 ){
@@ -248,7 +250,7 @@ export function Toggle ({
 
     return <div>
         <Wrapper2>
-            <SetHead h1margin={margin}>{txt}</SetHead>
+            <SetHead h1margin={margin} h1Weight={weight} headColor={color}>{txt}</SetHead>
             <ItemWrap>
                 <Subhead txt='OFF' />
                     <SwitchCont>
@@ -278,7 +280,7 @@ export function Toggle ({
 export function DarkMode (){
     return <div>
         <Wrapper2>
-            <Head txt='Dark Mode' />
+            <SetHead txt='Dark Mode' />
             <ItemWrap>
                 <Subhead txt='OFF' />
                 <Slider type='checkbox' />
@@ -289,10 +291,15 @@ export function DarkMode (){
     </div>
 }
 
-export function TextSize (){
+export function TextSize (
+{    txt='Text Size',
+    weight='400',
+    color='#FC5F6C',
+    margin='2.8em'
+}){ 
     return <div>
         <Wrapper2>
-            <Head txt='Text Size'/>
+        <SetHead h1Weight={weight} h1margin={margin} headColor={color}>{txt}</SetHead>
             <Select>
                 <option value='' hidden>
                      Large
@@ -305,10 +312,16 @@ export function TextSize (){
 
     </div>
 }
-export function FontType (){
+export function FontType (
+    {txt='Font Type',
+    weight='400',
+    color='#FC5F6C',
+    margin='1em'
+}
+){
     return <div>
         <Wrapper2>
-            <Head txt='Font Type'/>
+        <SetHead h1Weight={weight} h1margin={margin} headColor={color}>{txt}</SetHead>
             <Select>
                 <option value='' hidden>
                     Sans Serif

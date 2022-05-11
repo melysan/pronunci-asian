@@ -9,7 +9,7 @@ export default function Settings() {
 
         <TopBar />
         <Head margin="9em" txt="Settings"></Head>
-        <Subhead2 txt="Volume" margin='10em'></Subhead2>
+        <Head margin="9.5em" txt="Volume" weight="400" color="#FC5F6C"/>
         <Volume></Volume>
         <Toggle />
         <Toggle txt='Dark Mode' margin=""/>

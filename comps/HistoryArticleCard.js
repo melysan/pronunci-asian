@@ -36,22 +36,27 @@ margin-right: 20px;
 margin-top: 20px;
 `
 
+const HisArticleText = styled.div`
+display: none;`
+
 export default function HistoryArticleCard({
     text = "Description",
     lang = "Language",
     articleimg = "/Coco_Nguyen.svg",
-    where = "/history"
+    articletext = "",
+    where = ""
     
 }){
   
   const r = useRouter();
   const {page,type} = r.query;
 
-return<HisArticleCard onClick={() => r.push(where)}>
+return<HisArticleCard >
 <HisArticleImg article_img={articleimg}/>
 <FaveStar/>
   <HisArticleLang>{lang}</HisArticleLang>
   <HisArticleDesc>{text}</HisArticleDesc>
+  <HisArticleText>{articletext}</HisArticleText>
 
 </HisArticleCard>
 

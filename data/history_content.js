@@ -1,95 +1,43 @@
-export const historycards = {
-    vn_card_nguyenlastname: {
-        topic: "Why is the last name Nguyễn so popular?",
-        img:"/Coco_Nguyen.svg",
-        lang:"Vietnamese"
-    },
-    vn_card_structurename: {
-        topic: "How to read the structure of Vietnamese names",
-        img:"/Coco_Chalkboard.svg",
-        lang:"Vietnamese"
-    },
+export const langList = [
+{
+    country: "Chinese",
+    flag: "/CH_Flag.svg",
+    bg: "Coco_China_Pattern.svg"
+},
+{
+    country: "Japanese",
+    flag: "/JP_Flag.svg",
+    bg: "Coco_Japan_Pattern.svg"
+},
+{
+    country: "Korean",
+    flag: "/SK_Flag.svg",
+    bg: "Coco_SK_Pattern.svg"
+},
+{
+    country: "Vietnamese",
+    flag: "/VN_Flag.svg",
+    bg: "Coco_Vietnamese_Pattern.svg"
+},
 
-    cn_card_givennames: {
-        topic: "How Chinese Given Names are decided",
-        img:"/Coco_Chalkboard.svg",
-        lang:"Chinese"
-    },
-
-    cn_card_rarenames: {
-        topic: "Why some rare Chinese names are going extinct",
-        img:"/Coco_Chalkboard.svg",
-        lang:"Chinese"
-    },
-
-    jpn_card_prefixes: {
-        topic: "What are Japanese honorific prefixes?",
-        img:"/Coco_Chalkboard.svg",
-        lang:"Japanese"
-    },
+]
 
 
-    jpn_card_geographic: {
-        topic: "Geographical surnames in Japanese",
-        img:"/Coco_Chalkboard.svg",
-        lang:"Japanese"
-    },
-
-    kr_card_kimlastname: {
-        topic: "Why is the last name Kim so popular?",
-        img:"/Coco_Chalkboard.svg",
-        lang:"Korean"
-    },
-    
-    kr_card_adressing: {
-        topic: "Addressing somebody in Korean society",
-        img:"/Coco_Chalkboard.svg",
-        lang:"Korean"
-    },
-}
-
-export const historyarticlecontent = {
-    vn_nguyenlastname: {
-        articletitle:"Why is the last name Nguyễn so popular?",
-        articleimg:"/Coco_Nguyen.svg",
-        articlelang:"Vietnamese",
-        articletext:`About 39% of Vietnamese people share the last name, Nguyễn. 
-        Why? Well, back in the feudal times, kings required people to change their 
-        last names to avoid punishment and as a sign of submission. Families also changed 
-        their name to gain favours from the current dynasty. 
-        The Nguyễn dynasty was the last dynasty so no new kings forced other families 
-        to change their names from Nguyễn.`
-    },
-
-    vn_structurename: {
-        articletitle:"How to read the structure of Vietnamese names",
+export const langListChinese = [
+{       article:"Why some rare Chinese names are going extinct",
         articleimg:"/Coco_Chalkboard.svg",
-        articlelang:"Vietnamese",
-        articletext:`Vietnamese is always written in the order of surname, middle name, and then first name.
-        Most Vietnamese have one middle name, but it is quite possible 
-        to have two or more, or even no middle names at all. It might be 
-        because of their parents' personal preference, or a family's naming tradition.
-        If someone has a middle name, usually they are referred to as their first name only unless
-        there are others who share the same first name. In this case, they will be referred to their middle and first name.
-        `
-    },
-
-    cn_rarenames: {
-        articletitle:"Why some rare Chinese names are going extinct",
-        articleimg:"/Coco_Chalkboard.svg",
-        articlelang:"Chinese",
+        country:"Chinese",
         articletext:`In 2017, there were about 32,000 Chinese characters coded into computer systems,
-         leaving 36% of characters still to be coded or simply left out. 
+         leaving 36 percent of characters still to be coded or simply left out. 
          Therefore, up to 60 million Chinese citizens had trouble when it came to travel, 
          ID checks, and insurance claims due to their names having characters that were often 
          unrecognizable by digital devices. Many people have thus changed their names for the sake
           of convenience, which in turn is pushing certain characters to the brink of dying out.`
     },
-
-    cn_givennames: {
-        articletitle:"How Chinese Given Names are decided",
+    {
+        article:"How Chinese Given Names are decided",
         articleimg:"/Coco_Chalkboard.svg",
-        articlelang:"Chinese",
+        country:"Chinese",
         articletext:`Chinese names are meant to convey special meaning, 
         with the given names often expressing the best of wishes on the new-born.
          Some imply the birthplace, birth time or natural phenomenon, 
@@ -98,11 +46,40 @@ export const historyarticlecontent = {
          Li (courteous) and Xin (reliable) while others express the wishes of life,
           like Jian (health), Shou (longevity), and Fu (happiness).`
     },
+]
 
-    jpn_prefixes: {
-        articletitle:"What are Japanese honorific prefixes?",
+export const langListVietnamese = [
+    {
+        article:"Why is the last name Nguyễn so popular",
+        articleimg:"/Coco_Nguyen.svg",
+        country:"Vietnamese",
+        articletext:`About 39 percent of Vietnamese people share the last name, Nguyễn. 
+        The reason why is because back in the feudal times, kings required people to change their 
+        last names to avoid punishment and as a sign of submission. Families also changed 
+        their name to gain favours from the current dynasty. 
+        The Nguyễn dynasty was the last dynasty so no new kings forced other families 
+        to change their names from Nguyễn.`
+    },
+
+    {
+        article:"How to read the structure of Vietnamese names",
         articleimg:"/Coco_Chalkboard.svg",
-        articlelang:"Japanese",
+        country:"Vietnamese",
+        articletext:`Vietnamese is always written in the order of surname, middle name, and then first name.
+        Most Vietnamese have one middle name, but it is quite possible 
+        to have two or more, or even no middle names at all. It might be 
+        because of their parents' personal preference, or a family's naming tradition.
+        If someone has a middle name, usually they are referred to as their first name only unless
+        there are others who share the same first name. In this case, they will be referred to their middle and first name.
+        `
+    },
+]
+
+export const langListJapanese = [
+    {
+        article:"What are Japanese honorific prefixes",
+        articleimg:"/Coco_Chalkboard.svg",
+        country:"Japanese",
         articletext:`If you have some experience with Japanese, you may have noticed that lots of Japanese titles start with “o.”
          An “o” at the beginning of a Japanese title is usually an honorific prefix.
         Removing the “o” makes the title more colloquial, and in some cases, rude.
@@ -111,21 +88,23 @@ export const historyarticlecontent = {
         Keep this in mind as you learn about Japanese honorific suffixes.`
     },
 
-    jpn_geographic: {
-        articletitle:"Geographical surnames in Japanese",
+    {
+        article:"Geographical surnames in Japanese",
         articleimg:"/Coco_Chalkboard.svg",
-        articlelang:"Japanese",
+        country: "Japanese",
         articletext:`Many surnames are clearly geographical or point to a physical property. 
         Usually such descriptive names with kanji AB means B of [the] A.
          For example, Yama·moto (= base of the mountain), Ta·naka (= center of the paddy), 
          Naka·da (= middle paddy), Shima·mura (= island village), Hon·da (= original paddy), 
          Ki·no·shita (= under the tree) etc.`
     },
+]
 
-    kr_kimlastname: {
-        articletitle:"Why is the last name Kim so popular?",
+export const langListKorean = [
+    {
+        article:"Why is the last name Kim so popular",
         articleimg:"/Coco_Chalkboard.svg",
-        articlelang:"Korean",
+        country:"Korean",
         articletext:`The enduring popularity of the Kim family name can be 
         traced back to its royal origins. Kim has its roots in two separate royal 
         families; the Silla dynasty (57BC — 935AD) and the Gaya confederacy (42AD-562AD).
@@ -134,10 +113,10 @@ export const historyarticlecontent = {
     },
 
 
-    kr_addressing: {
-        articletitle:"Addressing somebody in Korean society",
+    {
+        article:"Addressing somebody in Korean society",
         articleimg:"/Coco_Chalkboard.svg",
-        articlelang:"Korean",
+        country:"Korean",
         articletext:`The usage of names is governed by strict norms in traditional Korean society.
          It is generally considered rude to address people by their given names in Korean culture.
           This is particularly the case when dealing with adults or one's elders.
@@ -145,4 +124,4 @@ export const historyarticlecontent = {
             as the speaker. However, it is considered rude to use someone's given name if that person's 
             age is a year older than the speaker.`
     },
-}
+]

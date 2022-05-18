@@ -49,13 +49,13 @@ export default function HistoryTopicCard({
     lang="Chinese",
     flagimg="/CH_FLAG.svg",
     bgimg="/Coco_China_Pattern.svg",
-    where="/history"
+    where=""
     
 }){
     const r = useRouter();
     const {page,type} = r.query;
 
-return <HisTopicCard onClick={() => r.push(where)}>
+return <HisTopicCard >
     <HisTopicBG bg_img={bgimg}/><Flag flag_img={flagimg}/>
     <HisTopicBox><Topic topic_color={topiccolor}>{lang}</Topic></HisTopicBox>
 </HisTopicCard>

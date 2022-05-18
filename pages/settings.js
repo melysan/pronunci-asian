@@ -16,6 +16,8 @@ export default function Settings() {
 
         <TextSize />
         <FontType />
-    <NavBar />
+    <NavBar 
+        setbuttoncolor='#FC5F6C'
+        settextcolor='#FC5F6C'/>
 </ PageWrap>
 }

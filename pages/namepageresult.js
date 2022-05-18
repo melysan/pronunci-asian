@@ -7,10 +7,18 @@ import TopBar from '../comps/TopBar'
 import { useRouter } from 'next/router'
 import NavBar from '../comps/NavBar';
 import { PageWrap } from "../comps/SetComps"
+import VietName from "../data/vietname_data.json"
 
 
-export default function NamePageResults() {
+function NamePageResults() {
     const r = useRouter();
+    var { page } = r.query;
+
+    if (page === undefined) {
+      page = 0;
+    }
+
+
     return <div>
           <style>@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap');</style>
 
@@ -19,10 +27,17 @@ export default function NamePageResults() {
         backto="/namepage"/>
             <SearchBar></SearchBar>
             <Header h1='Vietnamese'></Header>
-            <NameCard></NameCard>
+
+            {VietName.map((item) => (
+            <NameCard txtname={item.Name} country_txt={item.Country}
+          />
+            ))}
+
         <NavBar namebuttoncolor='#FC5F6C'
           nametextcolor='#FC5F6C'>
             </NavBar>
             </PageWrap>
     </div>
 }
+
+export default NamePageResults;

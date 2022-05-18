@@ -9,8 +9,9 @@ export default function App() {
       return !previousStar;
     });
   };
+export default function Test() {
 
     return <div>
-        <ToggleFav src={active} handleChangeActive={handleChangeActive}></ToggleFav>
-        </div>
+        
+    </div>
 }

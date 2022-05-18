@@ -4,24 +4,21 @@ import TopBar from '../comps/TopBar'
 import NavBar from '../comps/NavBar';
 import React, { useState } from 'react';
 import { PageWrap } from "../comps/SetComps";
-import VietName from "../data/vietname_data.json";
-
-
+import { VietName } from "../data/Name_data.js";
+import { useRouter } from 'next/router';
 
 
 export default function PronunciationPage() {
-    // const r = useRouter();
-    // var { qnum } = r.query;
-
-    // if (qnum === undefined) {
-    //   qnum = 0;
-    // }
+    const r = useRouter();
+    var {item} = r.query;
 
     return <div>
                 <style>@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap');</style>
 
         <PageWrap>
             <TopBar backto="/namepageresult"></TopBar>
+            {/* <PronounciationCont nametxt={VietName[item].Name}></PronounciationCont> */}
+    
             <PronounciationCont></PronounciationCont>
             <NavBar namebuttoncolor='#FC5F6C'
                 nametextcolor='#FC5F6C'>

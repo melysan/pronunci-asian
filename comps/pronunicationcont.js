@@ -59,11 +59,31 @@ dislay:flex;
 height: 130px;
 justify-content: flex-end;
 margin-left: 145px;
+width: 130px;
+
 `;
 
 let CocoHead = styled.img`
 height: 165px;
 width: 200px;
+align-items: center;
+`;
+
+let Cont = styled.div`
+&:hover {
+    background-color:#F05F6D;
+}`;
+
+
+let Redcircle = styled.div`
+width: 135px;
+border-radius: 50%; 
+background-color: #FC5F6C;
+dislay: flex;
+height: 135px;
+align-items: center;
+margin-top: -145px;
+margin-left: 32px;
 `;
 
 let StarIcon = styled.img`
@@ -122,10 +142,9 @@ color:${props => props.txt_cl};
 export function FavButton() {
     const [img, setImg] = useState("/favorite_button.svg");
 
-    return <StarIcon src={img === false ? '/favorite_button.svg' : '/selected_favebutton.svg'}
-        onClick={() => setImg(!img)}
+    return <StarIcon src={img ? '/favorite_button.svg' : '/selected_favebutton.svg'}
+        onClick={() => setImg(img ? false : true)}
     ></StarIcon>
-
 }
 
 export function Coco() {
@@ -133,27 +152,29 @@ export function Coco() {
 
     return <CocoCont>
         <CocoHead src="/cocoicon.svg" onClick={() => r.push('/namepronunciation2')}></CocoHead>
+            <Redcircle></Redcircle>
     </CocoCont>
 }
 
-export default function PronounciationCont({ w = '330px', h = '250px', subheaderinfo = 'Info', nametxt= 'name', infotxt = 'text', cl = '#5C80BC'}) {
+export default function PronounciationCont({ w = '330px', h = '250px', countryname = 'country', subheaderinfo = 'Info', nametxt = 'name', infotxt = 'text', cl = '#5C80BC' }) {
     const r = useRouter();
 
-    var { item } = r.query;
+    var {item} = r.query;
 
 
-    if (item === undefined) {
-      item = 0;
-    }
+    // var list = [];
+    // if (item === "Minh") {
+    //     list = VietName[0]
+    // } else 
 
 
     return <div>
-        <BeigeCont widthsize={w} heightsize={h}>
-            <CountryName txt_cl={cl}>{subheaderinfo = 'Vietnamese'}</CountryName>
+        <BeigeCont widthsize={w} heightsize={h} >
+            <CountryName txt_cl={cl}>{countryname}</CountryName>
 
             <FavButton></FavButton>
 
-            <Name txt_cl={'#FC5F6C'}> {nametxt =VietName[0].Name }</Name>
+            <Name txt_cl={'#FC5F6C'}> {nametxt}</Name>
             <Pronounce>{infotxt = 'm-ing'}</Pronounce>
             <CocoInfo txt_cl={cl}>{infotxt = 'Tap Coco to hear'}</CocoInfo>
             <CocoInfo2 txt_cl={cl}>{infotxt = ' pronounciation'}</CocoInfo2>

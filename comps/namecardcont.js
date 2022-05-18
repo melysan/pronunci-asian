@@ -50,17 +50,14 @@ export default function NameCard({ colorheading = '#5C80BC', country_txt = 'coun
     }
     
     return <div>
-        <NameCardBg onClick={() => r.push( {
-            pathname: '/namepronunication', 
-            query: { item: 'Minh'}
-        })} > 
+        <NameCardBg> 
             <FavButton></FavButton>
-            <CountryHeading countryheading_color={colorheading}>{country_txt = VietName[item].Lang}
-                <Name>{txtname = VietName[item].Name}</Name>
+            <CountryHeading countryheading_color={colorheading}>{country_txt}
+                <Name>{txtname}</Name>
             </CountryHeading>
         </NameCardBg>
 
-        <NameCardBg onClick={() => r.push( {pathname:'/namepronunication', query: { item: 'Nam'}
+        {/* <NameCardBg onClick={() => r.push( {pathname:'/namepronunication', query: { item: Number(item) + 2 }
         })}>
             <FavButton></FavButton>
             <CountryHeading countryheading_color={colorheading}>{country_txt = VietName[item].Lang}
@@ -68,13 +65,13 @@ export default function NameCard({ colorheading = '#5C80BC', country_txt = 'coun
             </CountryHeading>
         </NameCardBg>
         
-        <NameCardBg onClick={() => r.push({pathname:'/namepronunication', query: { item: 'Nguyen'}
+        <NameCardBg onClick={() => r.push({pathname:'/namepronunication', query: { item: Number(item) + 3}
         })}>
             <FavButton></FavButton>
             <CountryHeading countryheading_color={colorheading}>{country_txt = VietName[item].Lang}
                 <Name>{txtname = VietName[item + 2].Name}</Name>
             </CountryHeading>
-        </NameCardBg>
+        </NameCardBg> */}
 
     </div>
 }

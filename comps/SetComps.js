@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Subhead } from './IntroText';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { ToggleSwitch } from '../comps/switch'
 
 export const SetHead = styled.h1`
     font-size: ${props => props.fontSize || '24px'};
@@ -109,6 +110,60 @@ export const PageWrap2 = styled(PageWrap)`
     margin-top: 5em;
 `;
 
+
+///////Switch Stuff//////
+const Label = styled.label`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+`;
+
+const Switch = styled.div`
+  position: relative;
+  width: 60px;
+  height: 28px;
+  background: #b3b3b3;
+  border-radius: 32px;
+  padding: 4px;
+  transition: 300ms all;
+
+  &:before {
+    transition: 300ms all;
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 35px;
+    top: 50%;
+    left: 0px;
+    background: white;
+    transform: translate(0, -50%);
+    display: flex;
+    alighn-items: center;
+  }
+`;
+
+const Input = styled.input`
+  opacity: 0;
+  position: absolute;
+
+  &:checked + ${Switch} {
+    background: green;
+
+    &:before {
+      transform: translate(32px, -50%);
+    }
+  }
+`;
+
+
+
+////////////////////////
+
+
+
+
 export const SwitchCont = styled.div`
     padding: 20px;
 `;
@@ -157,53 +212,54 @@ export function Head({
 ){
     return (
     <SetHead h1margin={margin} headColor={color} h1Weight={weight} fontSize={size}>{txt}</SetHead>
-)
+)}
 
-}
 
-export function Switch({
-    active=false
-}){
-    const [switchState, setSwitch] = useState('inactive');
 
-    useEffect(()=>{
-        if (active === true){
-            setSwitch('active');
-        } else {
-            setSwitch('inactive');
-        }
 
-    }, [active]);
+// export function Switch({
+//     active=false
+// }){
+//     const [switchState, setSwitch] = useState('inactive');
 
-    // useEffect(()=>{
-    //     if(switchState === 'inactive'){
-    //       onChange(false)
-    //     } else {
-    //       onChange(true)
-    //     }
-    //   });
+//     useEffect(()=>{
+//         if (active === true){
+//             setSwitch('active');
+//         } else {
+//             setSwitch('inactive');
+//         }
+
+//     }, [active]);
+
+//     // useEffect(()=>{
+//     //     if(switchState === 'inactive'){
+//     //       onChange(false)
+//     //     } else {
+//     //       onChange(true)
+//     //     }
+//     //   });
     
 
-    return <SwitchCont>
+//     return <SwitchCont>
 
     
-        <SwitchBox
-        bg={switch_data[switchState].boxbg}
-        >
+//         <SwitchBox
+//         bg={switch_data[switchState].boxbg}
+//         >
 
-            <Tog
-            bg={switch_data[switchState].togglebg}
-            left={switch_data[switchState].toggleleft}
-            onClick={
-                () => setSwitch(switchState === 'inactive' ? 'active' : 'inactive')
-            }
-            />
+//             <Tog
+//             bg={switch_data[switchState].togglebg}
+//             left={switch_data[switchState].toggleleft}
+//             onClick={
+//                 () => setSwitch(switchState === 'inactive' ? 'active' : 'inactive')
+//             }
+//             />
 
-        </SwitchBox>
+//         </SwitchBox>
 
-    </SwitchCont>
+//     </SwitchCont>
 
-}
+// }
 
 export function Subhead2({
     txt='lorem'
@@ -230,45 +286,51 @@ export function Toggle ({
     margin='2em',
     weight='400',
     color='#FC5F6C',
-    active=false,
+    // active=false,
+    toggleTheme
 }
 ){
 
-    const [switchState, setSwitch] = useState('inactive');
+    // const [switchState, setSwitch] = useState('inactive');
+    // const [checked, setChecked]
+    // useEffect(()=>{
+    //     if (active === true){
+    //         setSwitch('active');
+    //     } else {
+    //         setSwitch('inactive');
+    //     }
 
-    useEffect(()=>{
-        if (active === true){
-            setSwitch('active');
-        } else {
-            setSwitch('inactive');
-        }
+    // }, [true]);
 
-    }, [active]);
+    // useEffect(() => {
+    //     if (switchState ==='inactive'){
+    //         onChange(false)
+    //     } else {
+    //         onChange(true)
+    //     }
+    // })
 
 
 
+    const [checked, setChecked] = useState(false);
+
+    const handleChange = (e) => {
+        setChecked(!checked);
+        console.log(e);
+        toggleTheme();
+    }
 
     return <div>
         <Wrapper2>
             <SetHead h1margin={margin} h1Weight={weight} headColor={color}>{txt}</SetHead>
             <ItemWrap>
                 <Subhead txt='OFF' />
-                    <SwitchCont>
-                        <SwitchBox
-                        bg={switch_data[switchState].boxbg}
-                        >
+                <Label>
+                    {/* <span>Toggle is {checked ? "on" : "off"}</span> */}
+                    <Input checked={checked} type="checkbox" onChange={handleChange} />
+                    <Switch />
+                </Label>
 
-                            <Tog
-                            bg={switch_data[switchState].togglebg}
-                            left={switch_data[switchState].toggleleft}
-                            onClick={
-                                () => setSwitch(switchState === 'inactive' ? 'active' : 'inactive')
-                            }
-                            />
-
-                        </SwitchBox>
-
-                    </SwitchCont>
                 <Subhead txt='ON' />
             </ItemWrap>
         </Wrapper2>

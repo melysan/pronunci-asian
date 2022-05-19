@@ -5,19 +5,47 @@ import TopBar from '../comps/TopBar'
 import NavBar from '../comps/NavBar';
 import React, { useState } from 'react';
 import PronounciationContSlider from "../comps/contslider";
+import { ChineseName, VietName,KoreanName,JapaneseName } from "../data/Name_data";
+import { useRouter } from 'next/router'
 
 
 
 
 export default function PronounciationSoundCont () {
+    const r = useRouter();
     
+    const {page, index} = r.query;
+
+    // var detailsToShow = null;
+    
+    // if(page === "Chinese"){
+    //     detailsToShow = Names[page][index];
+    // }
+
+    // const func = () => {
+    //     var aud = document.querySelector("audio");
+    //     aud.play();
+    //
+    // }
+
+     // const volfunc = (num)=>{
+    //     var aud = document.querySelector("audio");
+    //     aud.volume = num/10 ;
+    //
+    // }
     return <div>
                 <style>@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap');</style>
-
-        <PageWrap>
+        {/* <slider onChange={
+            (e)=>volfunc(e.target.value)
+        } /> */}
+        <PageWrap
+        //  onClick={
+        //      ()=>func()
+        // }
+        >
             <TopBar backto="/namepageresult"></TopBar>
-
-            <PronounciationContSlider></PronounciationContSlider>
+            {/* <audio src={detailsToShow.Audio} autoPlay /> */}
+            <PronounciationContSlider nametxt={page}></PronounciationContSlider>
             <NavBar namebuttoncolor='#FC5F6C'
                 nametextcolor='#FC5F6C'>
             </NavBar>

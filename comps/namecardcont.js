@@ -40,7 +40,7 @@ margin-left: 280px;
 margin-top: 25px;
 `;
 
-export default function NameCard({ colorheading = '#5C80BC', country_txt = 'country', txtname = 'Name', arr = [] }) {
+export default function NameCard({ colorheading = '#5C80BC', country_txt = 'country', txtname = 'Name', index, txt='hi'}) {
     const r = useRouter();
 
     var { item } = r.query;
@@ -48,16 +48,17 @@ export default function NameCard({ colorheading = '#5C80BC', country_txt = 'coun
     if (item === undefined) {
       item = 0;
     }
+
     
     return <div>
-        <NameCardBg> 
+        <NameCardBg onClick={() => r.push( {pathname:'/namepronunication', query: {page:txtname} })} >  
             <FavButton></FavButton>
             <CountryHeading countryheading_color={colorheading}>{country_txt}
                 <Name>{txtname}</Name>
             </CountryHeading>
         </NameCardBg>
 
-        {/* <NameCardBg onClick={() => r.push( {pathname:'/namepronunication', query: { item: Number(item) + 2 }
+        {/* <NameCardBg onClick={() => r.push( {pathname:'/namepronunic =]ation', query: { item: Number(item) + 2 }
         })}>
             <FavButton></FavButton>
             <CountryHeading countryheading_color={colorheading}>{country_txt = VietName[item].Lang}
@@ -72,6 +73,9 @@ export default function NameCard({ colorheading = '#5C80BC', country_txt = 'coun
                 <Name>{txtname = VietName[item + 2].Name}</Name>
             </CountryHeading>
         </NameCardBg> */}
-
+   {/* const Idk = ({index}) => {
+        return NameCard = {index}
+     */}
+    {/* } */}
     </div>
 }

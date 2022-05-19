@@ -14,7 +14,7 @@ import { useState } from "react/cjs/react.production.min";
 
 // result page 
 
-// {index=r.query}
+// {index = r.query}
 
 // .filter
 // ex. card.filter = to filter out information in the search bar

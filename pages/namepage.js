@@ -16,15 +16,12 @@ import { VietName } from '../data/Name_data'
 
 
 export default function CountriesOptions() {
-
-
     return <div>
         <style>@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap');</style>
 
         <PageWrap>
             <TopBar
                 backto="/homescreen" />
-            <SearchBar></SearchBar>
             <Header h1='Topics'></Header>
             <div className={styles.gridcontainer}>
 

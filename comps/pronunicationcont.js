@@ -156,16 +156,21 @@ export function Coco() {
     </CocoCont>
 }
 
-export default function PronounciationCont({ w = '330px', h = '250px', countryname = 'country', subheaderinfo = 'Info', nametxt = 'name', infotxt = 'text', cl = '#5C80BC' }) {
+export default function PronounciationCont({ 
+w = '330px',
+h = '250px',
+countryname = 'country',
+subheaderinfo = 'Info',
+nametxt = 'name',
+infotxt = 'text',
+cl = '#5C80BC',
+meaning='this is the meaning',
+origin='Origin'
+}) 
+{
     const r = useRouter();
 
-    var {item} = r.query;
-
-
-    // var list = [];
-    // if (item === "Minh") {
-    //     list = VietName[0]
-    // } else 
+    var {page, item} = r.query;
 
 
     return <div>
@@ -182,14 +187,14 @@ export default function PronounciationCont({ w = '330px', h = '250px', countryna
         </BeigeCont>
 
         <BeigeCont widthsize={w} heightsize={h = '110px'}>
-            <Subheader txt_cl={cl}>{subheaderinfo = 'Origin of Minh'}</Subheader>
-            <Info>{infotxt = 'Region: Hồ Chí Minh'}</Info>
+            <Subheader txt_cl={cl}>{subheaderinfo = 'Origin of'} {nametxt}</Subheader>
+            <Info>{origin = 'Region: Hồ Chí Minh'}</Info>
             <Info2>{infotxt = 'Period: 1890-1969'}</Info2>
         </BeigeCont>
 
         <BeigeCont widthsize={w} heightsize={h = '176px'}>
-            <Subheader txt_cl={cl}>{subheaderinfo = 'Meaning of Minh'}</Subheader>
-            <Info>{infotxt = 'The meaning of Minh means “bright” and “clever”.'}</Info>
+            <Subheader txt_cl={cl}>{subheaderinfo = 'Meaning of'} {nametxt} </Subheader>
+            <Info>{meaning}</Info>
         </BeigeCont>
     </div>
 }

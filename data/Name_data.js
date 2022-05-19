@@ -35,7 +35,8 @@ export const VietName= [
         Origin : "Region: Hồ Chí Minh",
         Period : "Period: 1890-1969",
         Country: "Vietnam",
-        Lang: "Vietnamese"
+        Lang: "Vietnamese",
+        Audio: "/minh.mp3"
     
     },
 
@@ -111,3 +112,10 @@ export const ChineseName = [
     },
 
 ]
+
+export const Names = [{
+    Chinese:ChineseName,
+    Vietnamese: VietName,
+    Japanese: JapaneseName,
+    Korean: KoreanName
+}]

@@ -12,7 +12,7 @@ export const Countries = [
         image: '/Korean Coco.svg',
     },
     {
-        country: "VietNam",
+        country: "Vietnamese",
         image: '/Vietnamese Coco.svg',
     },
 ]

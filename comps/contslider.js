@@ -136,14 +136,14 @@ export function Coco() {
 </CocoCont>
 }
 
-export default function PronounciationContSlider({ w = '330px', h = '250px', subheaderinfo = 'Info', infotxt = 'text', cl = '#5C80BC' }) {
+export default function PronounciationContSlider({ w = '330px', h = '250px', subheaderinfo = 'Info', infotxt = 'text', cl = '#5C80BC', countryname = 'country', nametxt = 'name'}) {
     const r = useRouter();
 
     return <div>
         <BeigeCont widthsize={w} heightsize={h}>
-            <CountryName txt_cl={cl}>{subheaderinfo = 'Vietnamese'}</CountryName>
+            <CountryName txt_cl={cl}>{countryname}</CountryName>
            <FavButton></FavButton>
-            <Name txt_cl={'#FC5F6C'}>{subheaderinfo = 'Minh'}<Img src="/volumeup.svg"></Img></Name>
+            <Name txt_cl={'#FC5F6C'}>{nametxt}<Img src="/volumeup.svg"></Img></Name>
             <Pronounce>{infotxt = 'm-ing'}</Pronounce>
             <Volume></Volume>
         </BeigeCont>

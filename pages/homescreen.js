@@ -6,7 +6,6 @@ import styles from '../styles/Home.module.css'
 import HomeCard from '../comps/HomeCard';
 import NavBar from '../comps/NavBar';
 import TopBar from '../comps/TopBar';
-import SearchBar from '../comps/SearchBar';
 import Header from '../comps/Header';
 import { PageWrap } from '../comps/SetComps';
 
@@ -25,7 +24,6 @@ export default function Home() {
       <PageWrap>
         <TopBar
         backto="/"/>
-        <SearchBar/>
         <Header
           h1="Let's start"/>
           

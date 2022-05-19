@@ -5,7 +5,6 @@ import styles from '../../styles/Home.module.css';
 
 import NavBar from '../../comps/NavBar';
 import TopBar from '../../comps/TopBar';
-import SearchBar from '../../comps/SearchBar';
 import Header from '../../comps/Header';
 import HistoryTopicCard from '../../comps/HistoryTopicCard';
 import { PageWrap } from '../../comps/SetComps';
@@ -21,9 +20,8 @@ const Index = () => (
     <PageWrap>
         <TopBar
         backto="/homescreen"/>
-        <SearchBar/>
         <Header
-          h1="Topics"/>
+          h1="History Topics"/>
 
  
       {langList.map((item, index) => (

@@ -25,7 +25,7 @@ const HistoryItem = () => {
       <Header
       h1={country}></Header>
 
-   {langListChinese.map((item, index) => (
+   {(country === "Chinese") && langListChinese.map((item, index) => (
         <div key={index}>
           <Link as={`${item.country}/${item.article}/${item.articletext}`} href="[country]/[article]/[articletext]">
             <a>
@@ -40,7 +40,7 @@ const HistoryItem = () => {
         </div>
       ))}
       
-      {langListJapanese.map((item, index) => (
+      {(country === "Japanese") && langListJapanese.map((item, index) => (
         <div key={index}>
             <Link as={`${item.country}/${item.article}/${item.articletext}`} href="[country]/[article]/[articletext]">
             <a>
@@ -55,7 +55,7 @@ const HistoryItem = () => {
         </div>
       ))}
 
-{langListKorean.map((item, index) => (
+{(country === "Korean") && langListKorean.map((item, index) => (
         <div key={index}>
             <Link as={`${item.country}/${item.article}/${item.articletext}`} href="[country]/[article]/[articletext]">
             <a>
@@ -70,7 +70,7 @@ const HistoryItem = () => {
         </div>
       ))}
 
-{langListVietnamese.map((item, index) => (
+{(country === "Vietnamese") && langListVietnamese.map((item, index) => (
         <div key={index}>
             <Link as={`${item.country}/${item.article}/${item.articletext}`} href="[country]/[article]/[articletext]">
             <a>

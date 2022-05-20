@@ -7,7 +7,18 @@ width: 330px;
 height: 80px;
 border-radius: 24px;
 background-color: #5C80BC;
-margin-bottom: 20px;`
+margin-bottom: 20px;
+&:hover { 
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;   
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05);
+    100% { transform: scale(1); }
+    }
+  }`
 
 const HisTopicBG = styled.img`
 width: 330px;
@@ -49,13 +60,13 @@ export default function HistoryTopicCard({
     lang="Chinese",
     flagimg="/CH_FLAG.svg",
     bgimg="/Coco_China_Pattern.svg",
-    where="/history"
+    where=""
     
 }){
     const r = useRouter();
     const {page,type} = r.query;
 
-return <HisTopicCard onClick={() => r.push(where)}>
+return <HisTopicCard >
     <HisTopicBG bg_img={bgimg}/><Flag flag_img={flagimg}/>
     <HisTopicBox><Topic topic_color={topiccolor}>{lang}</Topic></HisTopicBox>
 </HisTopicCard>

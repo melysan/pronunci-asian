@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const Heading = styled.h1`
 font-size: 24px;
 color: #5C80BC;
+margin-top: 5%;
 // margin-right: 230px;
 `;
 

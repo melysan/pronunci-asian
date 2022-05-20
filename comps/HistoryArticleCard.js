@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
+
+
+
 
 const HisArticleCard = styled.div`
 margin: 10px;
@@ -8,7 +12,18 @@ border-radius: 24px;
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 overflow: hidden;
 width: 330px;
-height: 209px;`
+height: 209px;
+&:hover { 
+  animation: pulse 1s infinite;
+  animation-timing-function: linear;   
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05);
+  100% { transform: scale(1); }
+  }
+}`
 
 
 const HisArticleImg = styled.img`
@@ -36,23 +51,41 @@ margin-right: 20px;
 margin-top: 20px;
 `
 
+const HisArticleText = styled.div`
+display: none;`
+
+
+export function FavButton() {
+  const [img, setImg] = useState("/favorite_button.svg");
+
+  return <FaveStar src={img === false ? '/favorite_button.svg' : '/selected_favebutton.svg'}
+      onClick={() => setImg(!img)}
+  ></FaveStar>
+}
+
 export default function HistoryArticleCard({
     text = "Description",
     lang = "Language",
     articleimg = "/Coco_Nguyen.svg",
-    where = "/history"
+    articletext = "",
+    where = ""
     
 }){
+  
+
+
   
   const r = useRouter();
   const {page,type} = r.query;
 
-return<HisArticleCard onClick={() => r.push(where)}>
+return<HisArticleCard >
 <HisArticleImg article_img={articleimg}/>
-<FaveStar/>
+<FavButton/>
   <HisArticleLang>{lang}</HisArticleLang>
   <HisArticleDesc>{text}</HisArticleDesc>
+  <HisArticleText>{articletext}</HisArticleText>
 
 </HisArticleCard>
 
 }
+

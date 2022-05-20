@@ -84,6 +84,22 @@ const NavBarButton4 = styled.div`
           color: #FC5F6C;
         }`
 
+    const NavBarButton5 = styled.div`
+      background-color: ${props => props.setbutton_color};
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      margin-top: 10px;
+      font-size: 16px;
+      text-align: center;
+      color: ${props => props.settext_color};
+      // line-height: 30px;
+      &:hover {
+          background-color:#FC5F6C;
+      }
+      &:hover {
+          color: #FC5F6C;
+        }`
 const Icon = styled.img`
 margin-top: 5px;
 `
@@ -93,10 +109,13 @@ export default function NavBar({
     namebuttoncolor = "#373A39",
     historybuttoncolor = "#373A39",
     favebuttoncolor = "#373A39",
+    setbuttoncolor = "#373A39",
     hometextcolor = "#373A39",
     nametextcolor = "#373A39",
     historytextcolor = "#373A39",
     favetextcolor = "#373A39",
+    settextcolor = "#373A39"
+
 }) {
     const r = useRouter();
     const {page,type} = r.query;
@@ -119,6 +138,10 @@ export default function NavBar({
             <NavBarButton4 onClick={() => r.push("/favourites")}
             favebutton_color={favebuttoncolor}
             favetext_color={favetextcolor}><Icon src="/star.svg" />Favorites</NavBarButton4>
+
+            <NavBarButton5 onClick={() => r.push("/settings")}
+            setbutton_color={setbuttoncolor}
+            settext_color={settextcolor}><Icon src="/cog.svg" />Settings</NavBarButton5>
         </NavBarButtonContainer>
 
     </NavBarBG>

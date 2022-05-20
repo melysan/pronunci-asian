@@ -10,7 +10,18 @@ border-radius: 20px;
 padding-top: 10px;
 padding-left: 20px;
 margin: 10px;
-box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;`;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+&:hover { 
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;   
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05);
+    100% { transform: scale(1); }
+    }
+  }`
 
 const CardDescription = styled.p`
 color: #FFFFFF;

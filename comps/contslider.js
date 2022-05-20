@@ -136,27 +136,43 @@ export function Coco() {
 </CocoCont>
 }
 
-export default function PronounciationContSlider({ w = '330px', h = '250px', subheaderinfo = 'Info', infotxt = 'text', cl = '#5C80BC' }) {
+export default function PronounciationContSlider({ 
+    w = '330px',
+    h = '250px',
+    countryname = 'country',
+    subheaderinfo = 'Info',
+    nametxt = 'name',
+    infotxt = 'text',
+    cl = '#5C80BC',
+    meaning='this is the meaning',
+    origin='Origin', 
+    period='period',
+    pronunciation='slay',
+    ind
+    }) 
+    {
+        
     const r = useRouter();
 
-    return <div>
-        <BeigeCont widthsize={w} heightsize={h}>
-            <CountryName txt_cl={cl}>{subheaderinfo = 'Vietnamese'}</CountryName>
-           <FavButton></FavButton>
-            <Name txt_cl={'#FC5F6C'}>{subheaderinfo = 'Minh'}<Img src="/volumeup.svg"></Img></Name>
-            <Pronounce>{infotxt = 'm-ing'}</Pronounce>
-            <Volume></Volume>
-        </BeigeCont>
+return <div>
+<BeigeCont widthsize={w} heightsize={h} >
+    <CountryName txt_cl={cl}>{countryname}</CountryName>
 
-        <BeigeCont widthsize={w} heightsize={h = '110px'}>
-            <Subheader txt_cl={cl}>{subheaderinfo = 'Origin of Minh'}</Subheader>
-            <Info>{infotxt = 'Region: Hồ Chí Minh' }</Info>
-            <Info2>{infotxt = 'Period: 1890-1969'}</Info2>
-        </BeigeCont>
+    <FavButton></FavButton>
+    <Name txt_cl={'#FC5F6C'}>{nametxt}<Img src="/volumeup.svg"></Img></Name>    <Pronounce>{pronunciation}</Pronounce>
+    <Pronounce>{pronunciation}</Pronounce>
+    <Volume></Volume>
+</BeigeCont>
 
-        <BeigeCont widthsize={w} heightsize={h = '176px'}>
-            <Subheader txt_cl={cl}>{subheaderinfo = 'Meaning of Minh'}</Subheader>
-            <Info>{infotxt = 'The meaning of Minh means “bright” and “clever”.'}</Info>
-        </BeigeCont>
-    </div>
+<BeigeCont widthsize={w} heightsize={h = '110px'}>
+    <Subheader txt_cl={cl}>{subheaderinfo = 'Origin of'} {nametxt}</Subheader>
+    <Info>{origin}</Info>
+    <Info2>{period}</Info2>
+</BeigeCont>
+
+<BeigeCont widthsize={w} heightsize={h = '176px'}>
+    <Subheader txt_cl={cl}>{subheaderinfo = 'Meaning of'} {nametxt} </Subheader>
+    <Info>{meaning}</Info>
+</BeigeCont>
+</div>
 }

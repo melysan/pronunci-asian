@@ -7,37 +7,56 @@ import TopBar from '../comps/TopBar'
 import { useRouter } from 'next/router'
 import NavBar from '../comps/NavBar';
 import { PageWrap } from "../comps/SetComps"
-import VietName from "../data/vietname_data.json"
+// import VietName from "../data/vietname_data.json"
+import { ChineseName, JapaneseName, KoreanName, Names, VietName } from '../data/Name_data.js'
 
 
 function NamePageResults() {
-    const r = useRouter();
-    var { page } = r.query;
-
-    if (page === undefined) {
-      page = 0;
-    }
+  const r = useRouter();
+  var { page} = r.query;
 
 
-    return <div>
-          <style>@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap');</style>
+  // if( page === "Chinese") {
 
-        <PageWrap>
-        <TopBar
-        backto="/namepage"/>
-            <SearchBar></SearchBar>
-            <Header h1='Vietnamese'></Header>
+  //   {ChineseName.map((item, index) => (
+  //     <NameCard txtname={item.Name} country_txt={item.Country} index={index}
+  //   />
+  //     ))}
 
-            {VietName.map((item) => (
-            <NameCard txtname={item.Name} country_txt={item.Country}
-          />
-            ))}
+  // } else if( page === 'Vietnamese') {
+  //   {VietName.map((item, index) => (
+  //     <NameCard txtname={item.Name} country_txt={item.Country} index={index}
+  //   />
+  //     ))}
+  //   }
+  // }
 
-        <NavBar namebuttoncolor='#FC5F6C'
-          nametextcolor='#FC5F6C'>
-            </NavBar>
-            </PageWrap>
-    </div>
+
+  return <div>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap');</style>
+
+    <PageWrap>
+      <TopBar
+        backto="/namepage" />
+      <Header h1={page}></Header>
+
+      {(page === "Chinese") && ChineseName.map((item, index) => (
+        <NameCard ind={index} txtname={item.Name} country_txt={item.Country} />
+      ))}
+      {(page === "Vietnamese") && VietName.map((item, index) => (
+        <NameCard ind={index} txtname={item.Name} country_txt={item.Country} />
+      ))}{(page === "Japanese") && JapaneseName.map((item, index) => (
+        <NameCard ind={index} txtname={item.Name} country_txt={item.Country} />
+      ))}{(page === "Korean") && KoreanName.map((item, index) => (
+        <NameCard ind={index} txtname={item.Name} country_txt={item.Country} />
+      ))}
+
+
+      <NavBar namebuttoncolor='#FC5F6C'
+        nametextcolor='#FC5F6C'>
+      </NavBar>
+    </PageWrap>
+  </div>
 }
 
 export default NamePageResults;

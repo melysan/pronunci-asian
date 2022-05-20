@@ -121,16 +121,18 @@ font-size: 16px;
 display: flex;
 flex-wrap: wrap;
 margin: 9px;
+height: 0px;
 margin-bottom:  0px;
 color:${props => props.txt_cl};
 `;
 
 let Info2 = styled.p`
-padding-left: 15px;
 font-size: 16px;
 display: flex;
-flex-wrap: wrap;
-margin: 0px;
+padding-top: 10px;
+padding-right: 50px;
+margin: 9px;
+margin-left: 12px;
 color:${props => props.txt_cl};
 `;
 
@@ -149,23 +151,31 @@ export function FavButton() {
 
 export function Coco() {
     const r = useRouter();
+    var {page, index} = r.query;
 
     return <CocoCont>
-        <CocoHead src="/cocoicon.svg" onClick={() => r.push('/namepronunciation2')}></CocoHead>
+        <CocoHead src="/cocoicon.svg" onClick={() => r.push({pathname:'/pronunciationresult', query:{page:page, id:index}})}></CocoHead>
             <Redcircle></Redcircle>
     </CocoCont>
 }
 
-export default function PronounciationCont({ w = '330px', h = '250px', countryname = 'country', subheaderinfo = 'Info', nametxt = 'name', infotxt = 'text', cl = '#5C80BC' }) {
+export default function PronounciationCont({ 
+w = '330px',
+h = '250px',
+countryname = 'country',
+subheaderinfo = 'Info',
+nametxt = 'name',
+infotxt = 'text',
+cl = '#5C80BC',
+meaning='this is the meaning',
+origin='Origin', 
+period='period',
+pronunciation='slay',
+}) 
+{
     const r = useRouter();
 
-    var {item} = r.query;
-
-
-    // var list = [];
-    // if (item === "Minh") {
-    //     list = VietName[0]
-    // } else 
+    var {page, item} = r.query;
 
 
     return <div>
@@ -175,21 +185,22 @@ export default function PronounciationCont({ w = '330px', h = '250px', countryna
             <FavButton></FavButton>
 
             <Name txt_cl={'#FC5F6C'}> {nametxt}</Name>
-            <Pronounce>{infotxt = 'm-ing'}</Pronounce>
+            <Pronounce>{pronunciation}</Pronounce>
             <CocoInfo txt_cl={cl}>{infotxt = 'Tap Coco to hear'}</CocoInfo>
             <CocoInfo2 txt_cl={cl}>{infotxt = ' pronounciation'}</CocoInfo2>
             <Coco></Coco>
         </BeigeCont>
 
         <BeigeCont widthsize={w} heightsize={h = '110px'}>
-            <Subheader txt_cl={cl}>{subheaderinfo = 'Origin of Minh'}</Subheader>
-            <Info>{infotxt = 'Region: Hồ Chí Minh'}</Info>
-            <Info2>{infotxt = 'Period: 1890-1969'}</Info2>
+            <Subheader txt_cl={cl}>{subheaderinfo = 'Origin of'} {nametxt}</Subheader>
+            <Info>{origin}</Info>
+            <Info2>{period}</Info2>
         </BeigeCont>
 
         <BeigeCont widthsize={w} heightsize={h = '176px'}>
-            <Subheader txt_cl={cl}>{subheaderinfo = 'Meaning of Minh'}</Subheader>
-            <Info>{infotxt = 'The meaning of Minh means “bright” and “clever”.'}</Info>
+            <Subheader txt_cl={cl}>{subheaderinfo = 'Meaning of'} {nametxt} </Subheader>
+            <Info>{meaning}</Info>
         </BeigeCont>
     </div>
 }
+

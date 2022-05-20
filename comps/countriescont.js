@@ -31,7 +31,8 @@ export default function FlagCont({bg='#F2F5EA',img='/Chinese Coco.svg', text='Ch
 const r = useRouter();
 const {page} = r.query;
 
-    return <Cont onClick={()=>r.push({pathname:'/namepageresult', query: { page:Number(page) + 1 > VietName.length-1 ? VietName.length-1 : Number(page)+ 1 }})}>
+    return <Cont onClick={()=>r.push({pathname:'/namepageresult', query: {page:text
+         }})}>
 <BgCont cl={bg}> 
         <CocoImg src={img}></CocoImg>
     </BgCont>

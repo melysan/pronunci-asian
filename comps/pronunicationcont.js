@@ -58,7 +58,17 @@ height: 130px;
 justify-content: flex-end;
 margin-left: 145px;
 width: 130px;
-
+&:hover { 
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;   
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05);
+    100% { transform: scale(1); }
+    }
+  }
 `;
 
 let CocoHead = styled.img`

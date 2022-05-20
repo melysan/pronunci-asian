@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Subhead } from './IntroText';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { ToggleSwitch } from '../comps/switch'
 
 export const SetHead = styled.h1`
     font-size: ${props => props.fontSize || '24px'};
@@ -112,28 +111,31 @@ export const PageWrap2 = styled(PageWrap)`
 
 
 ///////Switch Stuff//////
+
 const Label = styled.label`
   display: flex;
   align-items: center;
-  gap: 10px;
+//   gap: 10px;
+    padding: 20px;
   cursor: pointer;
 `;
 
 const Switch = styled.div`
   position: relative;
-  width: 60px;
-  height: 28px;
+  width: 34px;
+  height: 14px;
   background: #b3b3b3;
   border-radius: 32px;
   padding: 4px;
   transition: 300ms all;
 
   &:before {
+    box-shadow: 0px 0.1px 0.3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.2);
     transition: 300ms all;
     content: "";
     position: absolute;
-    width: 28px;
-    height: 28px;
+    width: 20px;
+    height: 20px;
     border-radius: 35px;
     top: 50%;
     left: 0px;
@@ -149,10 +151,10 @@ const Input = styled.input`
   position: absolute;
 
   &:checked + ${Switch} {
-    background: green;
+    background: #FF3333;
 
     &:before {
-      transform: translate(32px, -50%);
+      transform: translate(15px, -50%);
     }
   }
 `;
@@ -287,7 +289,8 @@ export function Toggle ({
     weight='400',
     color='#FC5F6C',
     // active=false,
-    toggleTheme
+    toggleTheme,
+    onChange = () => {},
 }
 ){
 
@@ -312,12 +315,14 @@ export function Toggle ({
 
 
 
-    const [checked, setChecked] = useState(false);
+    const [checked, setChecked] = useState(true);
 
     const handleChange = (e) => {
         setChecked(!checked);
         console.log(e);
+        // setIsDarkMode();
         toggleTheme();
+        // localStorage.setItem('theme', !theme)
     }
 
     return <div>
@@ -327,7 +332,7 @@ export function Toggle ({
                 <Subhead txt='OFF' />
                 <Label>
                     {/* <span>Toggle is {checked ? "on" : "off"}</span> */}
-                    <Input checked={checked} type="checkbox" onChange={handleChange} />
+                    <Input checked={checked} type="checkbox" onChange={handleChange}/>
                     <Switch />
                 </Label>
 

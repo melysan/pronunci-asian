@@ -12,8 +12,6 @@ import NamePageResults from './namepageresult'
 import NameCard from '../comps/namecardcont'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { VietName } from '../data/Name_data'
-
 
 export default function CountriesOptions() {
     return <div>
@@ -25,10 +23,12 @@ export default function CountriesOptions() {
             <Header h1='Topics'></Header>
             <div className={styles.gridcontainer}>
 
-            {Countries.map((item) =>
+                {Countries.map((item, index) =>
+                    <div key={index}>
                         <FlagCont text={item.country} img={item.image}>
                         </FlagCont>
-                 )}
+                    </div>
+                )}
             </div>
             <NavBar namebuttoncolor='#FC5F6C'
                 nametextcolor='#FC5F6C'>

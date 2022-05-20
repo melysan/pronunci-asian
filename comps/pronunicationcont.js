@@ -2,8 +2,6 @@ import styled from "styled-components"
 import { useRouter } from 'next/router'
 import { Volume } from '../comps/SetComps'
 import { useState } from 'react';
-import { VietName } from "../data/Name_data.js";
-
 
 
 let BeigeCont = styled.div`

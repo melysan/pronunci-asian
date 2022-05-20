@@ -102,6 +102,8 @@ const NavBarButton4 = styled.div`
         }`
 const Icon = styled.img`
 margin-top: 5px;
+width: 50px;
+height: 50px;
 `
 
 export default function NavBar({

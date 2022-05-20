@@ -10,7 +10,7 @@ export const KoreanName = [
 {
 
     Name: 'Ji-woo',
-    Meaning: '‘Ji’ means will, purpose, or ambition; ‘Woo’ means house or universe',
+    Meaning: "'Ji' means will, purpose, or ambition; 'Woo' means house or universe",
     Origin : "Region: Korea",
     Country: "Korea",
     Lang: "Korean"

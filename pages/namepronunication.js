@@ -4,7 +4,7 @@ import TopBar from '../comps/TopBar';
 import NavBar from '../comps/NavBar';
 import React, { useState } from 'react';
 import { PageWrap } from "../comps/SetComps";
-import { VietName, ChineseName, KoreanName, JapaneseName, Names } from "../data/Name_data.js";
+import { VietName, ChineseName, KoreanName, JapaneseName, Names } from "../data/name_data.js";
 import { useRouter } from 'next/router';
 
 export default function PronunciationPage() {

@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 import NavBar from '../comps/NavBar';
 import { PageWrap } from "../comps/SetComps"
 // import VietName from "../data/vietname_data.json"
-import { ChineseName, JapaneseName, KoreanName, Names, VietName } from '../data/name_data.js'
+import { ChineseName, JapaneseName, KoreanName, VietName } from '../data/name_data.js'
 
 
 function NamePageResults() {
@@ -41,15 +41,16 @@ function NamePageResults() {
       <Header h1={page}></Header>
 
       {(page === "Chinese") && ChineseName.map((item, index) => (
-        <NameCard ind={index} txtname={item.Name} country_txt={item.Country} />
-      ))}
+        <div key={index}><NameCard ind={index} txtname={item.Name} country_txt={item.Country} />
+      </div>))}
       {(page === "Vietnamese") && VietName.map((item, index) => (
-        <NameCard ind={index} txtname={item.Name} country_txt={item.Country} />
-      ))}{(page === "Japanese") && JapaneseName.map((item, index) => (
-        <NameCard ind={index} txtname={item.Name} country_txt={item.Country} />
-      ))}{(page === "Korean") && KoreanName.map((item, index) => (
-        <NameCard ind={index} txtname={item.Name} country_txt={item.Country} />
-      ))}
+        <div key={index}><NameCard ind={index} txtname={item.Name} country_txt={item.Country} />
+      </div>))}{(page === "Japanese") && JapaneseName.map((item, index) => (
+        <div key={index}><NameCard ind={index} txtname={item.Name} country_txt={item.Country} />
+      </div>))}{(page === "Korean") && KoreanName.map((item, index) => (
+        <div key={index}><NameCard ind={index} txtname={item.Name} country_txt={item.Country} />
+      </div>))}
+      
 
 
       <NavBar namebuttoncolor='#FC5F6C'

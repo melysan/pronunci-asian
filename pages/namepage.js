@@ -15,7 +15,7 @@ export default function CountriesOptions() {
         <PageWrap>
             <TopBar
                 backto="/homescreen" />
-            <Header h1='Topics'></Header>
+            <Header h1='Name Topics'></Header>
             <div className={styles.gridcontainer}>
 
                 {Countries.map((item, index) =>

@@ -6,7 +6,19 @@ import Link  from 'next/link'
 let Cont = styled.div` 
 &:hover {
     color:#FC5F6C;
-}`; 
+}
+
+&:hover { 
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;   
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05);
+    100% { transform: scale(1); }
+    }
+  }`; 
 
 let BgCont = styled.div`
 background-color:${props=>props.cl};

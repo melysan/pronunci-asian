@@ -50,6 +50,8 @@ font-weight: bold;`
 
 const Flag = styled.img`
 position: relative;
+width: 50px;
+height: 50px;
 left: 65%;
 top: 20%;
 content:url("${props=>props.flag_img}");

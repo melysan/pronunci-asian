@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { useRouter } from 'next/router'
 import React, { useState } from 'react';
 import {FavButton} from '../comps/pronunicationcont.js'
+import {Names} from '../data/name_data.js'
 
 
 let BeigeCont = styled.div`
@@ -153,10 +154,19 @@ export default function PronounciationContSlider({
     }) 
     {
         
-    // const r = useRouter();
+    const r = useRouter();
+    var {page, index } = r.query;
+
+   var detailsToShow = null; 
+     
+    detailsToShow = Names[page][index].Audio;
+    
+    // if(page) {
+    // console.log({detailsToShow})
+    // }
 
     const audioPlay = () => {
-        var aud =  new Audio('cocoa.mp3');
+        var aud =  new Audio(detailsToShow);
         aud.play();
     }    
 

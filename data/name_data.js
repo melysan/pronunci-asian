@@ -6,7 +6,8 @@ export const KoreanName = [
         Period: "Period: Unknown",
         Country: "Korea",
         Lang: "Korean",
-        Pronunciation: "Po-ram"
+        Pronunciation: "Po-ram",
+        Audio: "/boram.mp3"
     },
     {
 
@@ -16,7 +17,8 @@ export const KoreanName = [
         Country: "Korea",
         Period: 'Period: Unknown',
         Lang: "Korean", 
-        Pronunciation: "Chi-woo"
+        Pronunciation: "Chi-woo",
+        Audio: "/jiwoo.mp3"
 
     },
 
@@ -27,7 +29,8 @@ export const KoreanName = [
         Origin: "Region: Korea",
         Period: 'Period: Unknown',
         Lang: "Korean",
-        Pronunciation: "Sul-gee"
+        Pronunciation: "Sul-gee",
+        Audio: "/seulgi.mp3"
     }
 
 ]
@@ -54,7 +57,8 @@ export const VietName = [
         Period: "Period: 1801-1900",
         Country: "Vietnam",
         Lang: "Vietnamese",
-        Pronunciation: "Nam"
+        Pronunciation: "Nam",
+        Audio: "/nam.mp3"
 
     },
     {
@@ -64,7 +68,8 @@ export const VietName = [
         Period: "Period: 1890-1969",
         Country: "Vietnam",
         Lang: "Vietnamese",
-        Pronunciation: "Nue-win"
+        Pronunciation: "Nue-win",
+        Audio: "/nguyen.mp3"
 
 
     }
@@ -79,7 +84,8 @@ export const JapaneseName = [
         Period: 'Period: Unknown',
         Country: "Japan",
         Lang: "Japanese",
-        Pronunciation: "Soo-kee"
+        Pronunciation: "Soo-kee",
+        Audio: "/suki.mp3"
 
 
     },
@@ -90,7 +96,8 @@ export const JapaneseName = [
         Period: 'Period: Unknown',
         Country: "Japan",
         Lang: "Japanese",
-        Pronunciation: "Ee-zu-mee"
+        Pronunciation: "Ee-zu-mee",
+        Audio: "/izumi.mp3"
 
     },
     {
@@ -100,7 +107,8 @@ export const JapaneseName = [
         Period: 'Period: Unknown',
         Country: "Japan",
         Lang: "Japanese",
-        Pronunciation: "Shee-no-boo"
+        Pronunciation: "Shee-no-boo",
+        Audio: "/shinobu.mp3"
 
 
     },
@@ -114,7 +122,8 @@ export const ChineseName = [
         Country: "China",
         Period: 'Period: Unknown',
         Lang: "Chinese",
-        Pronunciation: "H-wah"
+        Pronunciation: "H-wah",
+        Audio: "/huan.mp3"
 
     },
     {
@@ -124,7 +133,8 @@ export const ChineseName = [
         Country: "China",
         Period: 'Period: Unknown',
         Lang: "Chinese",
-        Pronunciation: "Chya-ee"
+        Pronunciation: "Chya-ee",
+        Audio: "/jiayi.mp3"
     },
     {
         Name: "Zhen",
@@ -133,7 +143,8 @@ export const ChineseName = [
         Period: 'Period: Unknown',
         Country: "China",
         Lang: "Chinese",
-        Pronunciation: "Chun"
+        Pronunciation: "Chun",
+        Audio: "/zhen.mp3"
 
     },
 

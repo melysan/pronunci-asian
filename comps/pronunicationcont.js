@@ -72,8 +72,8 @@ width: 130px;
 `;
 
 let CocoHead = styled.img`
-height: 165px;
-width: 200px;
+height: 100px;
+width: 100px;
 align-items: center;
 `;
 
@@ -150,9 +150,9 @@ color:${props => props.txt_cl};
 // }
 
 export function FavButton() {
-    const [img, setImg] = useState("/fave_button.svg");
+    const [img, setImg] = useState("/favebutton.svg");
 
-    return <StarIcon src={img ? '/fave_button.svg' : '/selected_favebutton.svg'}
+    return <StarIcon src={img ? '/favebutton.svg' : '/selected_favebutton.svg'}
         onClick={() => setImg(img ? false : true)}
     ></StarIcon>
 }

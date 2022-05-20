@@ -58,7 +58,7 @@ content:url("${props=>props.flag_img}");
 export default function HistoryTopicCard({
     topiccolor="#5C80BC",
     lang="Chinese",
-    flagimg="/CH_FLAG.svg",
+    flagimg="/China_Flag.svg",
     bgimg="/Coco_China_Pattern.svg",
     where=""
     

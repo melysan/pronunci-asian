@@ -1,22 +1,22 @@
 export const langList = [
 {
     country: "Chinese",
-    flag: "/CH_Flag.svg",
+    flag: "/China_Flag.svg",
     bg: "Coco_China_Pattern.svg"
 },
 {
     country: "Japanese",
-    flag: "/JP_Flag.svg",
+    flag: "/Japan_Flag.svg",
     bg: "Coco_Japan_Pattern.svg"
 },
 {
     country: "Korean",
-    flag: "/SK_Flag.svg",
+    flag: "/Korea_Flag.svg",
     bg: "Coco_SK_Pattern.svg"
 },
 {
     country: "Vietnamese",
-    flag: "/VN_Flag.svg",
+    flag: "/Vietnam_Flag.svg",
     bg: "Coco_Vietnamese_Pattern.svg"
 },
 

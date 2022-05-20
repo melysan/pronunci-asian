@@ -3,6 +3,7 @@ import { Subhead } from './IntroText';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
+
 export const SetHead = styled.h1`
     font-size: ${props => props.fontSize || '24px'};
     color: ${props => props.headColor || "#5C80BC"};
@@ -313,9 +314,20 @@ export function Toggle ({
     //     }
     // })
 
+    // const [checked, setChecked] = useState(() => {
+    //     if (typeof window !== 'undefined'){
+    //         // console.log('it passes'); 
+    //         localStorage.getItem('checked') === 'false' 
+        
+    //     }
+    // });
+
+    const [checked, setChecked] = useState(() =>  false);
 
 
-    const [checked, setChecked] = useState(true);
+    useEffect(() => {
+        localStorage.setItem('checked', checked)
+    });
 
     const handleChange = (e) => {
         setChecked(!checked);

@@ -11,11 +11,47 @@ import HistoryArticleCard from '../../../comps/HistoryArticleCard';
 import { PageWrap } from '../../../comps/SetComps';
 import {langListChinese, langListJapanese, langListKorean, langListVietnamese} from "../../../data/history_content";
 
+
+import { lightTheme, darkTheme } from "../../../comps/darkmode"
+import { useState, useEffect } from 'react';
+import { GlobalStyles } from '../../../comps/globalstyles';
+import { ThemeProvider } from "styled-components"
+
 const HistoryItem = () => {
   const router = useRouter();
   const { country } = router.query;
 
+
+  const [theme, setTheme] = useState('light');
+  const isDarkTheme = theme === "dark";
+
+  
+  const themeToggler = () => {
+      theme === 'light' ? setTheme('dark') : setTheme('light');
+      const updatedTheme = isDarkTheme ? "light" : "dark";
+      setTheme(updatedTheme);
+      localStorage.setItem("theme", updatedTheme);
+  }
+
+
+  useEffect(() => {
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (savedTheme && ["dark", "light"].includes(savedTheme)) {
+        setTheme(savedTheme);
+      } else if (prefersDark) {
+        setTheme("dark");
+      }
+  }, []);
+
+
+
   return (    
+
+    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+    <GlobalStyles />
     <PageWrap>
         <Head><title>History Topics</title>
         <style>@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap');</style>
@@ -55,7 +91,7 @@ const HistoryItem = () => {
         </div>
       ))}
 
-{(country === "Korean") && langListKorean.map((item, index) => (
+      {(country === "Korean") && langListKorean.map((item, index) => (
         <div key={index}>
             <Link as={`${item.country}/${item.article}/${item.articletext}`} href="[country]/[article]/[articletext]">
             <a>
@@ -70,7 +106,7 @@ const HistoryItem = () => {
         </div>
       ))}
 
-{(country === "Vietnamese") && langListVietnamese.map((item, index) => (
+      {(country === "Vietnamese") && langListVietnamese.map((item, index) => (
         <div key={index}>
             <Link as={`${item.country}/${item.article}/${item.articletext}`} href="[country]/[article]/[articletext]">
             <a>
@@ -89,6 +125,10 @@ const HistoryItem = () => {
      historybuttoncolor='#FC5F6C'
      historytextcolor='#FC5F6C'></NavBar>
     </PageWrap>
+
+
+
+	</ThemeProvider>
   );
 };
 // show all x lang topic cards in here?

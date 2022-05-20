@@ -11,8 +11,42 @@ import { PageWrap } from '../../comps/SetComps';
 import { langList } from "../../data/history_content";
 
 
-const Index = () => (
-  <>
+import { lightTheme, darkTheme } from "../../comps/darkmode"
+import { useState, useEffect } from 'react';
+import { GlobalStyles } from '../../comps/globalstyles';
+import { ThemeProvider } from "styled-components"
+
+
+const Index = () => {
+  const [theme, setTheme] = useState('light');
+  const isDarkTheme = theme === "dark";
+
+  
+  const themeToggler = () => {
+      theme === 'light' ? setTheme('dark') : setTheme('light');
+      const updatedTheme = isDarkTheme ? "light" : "dark";
+      setTheme(updatedTheme);
+      localStorage.setItem("theme", updatedTheme);
+  }
+
+
+  useEffect(() => {
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (savedTheme && ["dark", "light"].includes(savedTheme)) {
+        setTheme(savedTheme);
+      } else if (prefersDark) {
+        setTheme("dark");
+      }
+   }, []);
+
+  
+  return <>
+      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+    <GlobalStyles />
+
     <Head>
       <title>History</title>
       <style>@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap');</style>
@@ -42,12 +76,16 @@ const Index = () => (
 
 
 
-<NavBar
-historybuttoncolor='#FC5F6C'
-historytextcolor='#FC5F6C'>
-</NavBar>
+  <NavBar
+    historybuttoncolor='#FC5F6C'
+    historytextcolor='#FC5F6C'>
+  </NavBar>
 
 </PageWrap>
+
+
+	</ThemeProvider>
 </>
-);
+
+};
 export default Index;

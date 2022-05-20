@@ -26,8 +26,8 @@ const HistoryResults = () => {
             articletitle={article}
             articlelang={country}
             articleimg="/Coco_Chalkboard.svg"
-            articletext={articletext}
-            />
+            articletext={articletext}>
+        </Article>
 
       <NavBar
       historybuttoncolor='#FC5F6C'

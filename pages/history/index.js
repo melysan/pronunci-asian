@@ -19,9 +19,11 @@ const Index = () => (
     </Head>
     <PageWrap>
         <TopBar
-        backto="/homescreen"/>
+        backto="/homescreen">
+          </TopBar>
         <Header
-          h1="History Topics"/>
+          h1="History Topics">
+        </Header>
 
  
       {langList.map((item, index) => (
@@ -31,7 +33,8 @@ const Index = () => (
             <HistoryTopicCard
             lang = {item.country}
             flagimg = {item.flag}
-            bgimg = {item.bg}></HistoryTopicCard>
+            bgimg = {item.bg}>
+            </HistoryTopicCard>
             </a>
           </Link>
         </div>
@@ -41,8 +44,8 @@ const Index = () => (
 
 <NavBar
 historybuttoncolor='#FC5F6C'
-historytextcolor='#FC5F6C'
-/>
+historytextcolor='#FC5F6C'>
+</NavBar>
 
 </PageWrap>
 </>

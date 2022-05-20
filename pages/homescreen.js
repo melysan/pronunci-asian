@@ -23,24 +23,29 @@ export default function Home() {
 
       <PageWrap>
         <TopBar
-        backto="/"/>
+        backto="/">
+        </TopBar>
         <Header
-          h1="Let's start"/>
+          h1="Let's start">
+        </Header>
           
         <HomeCard 
-        where="/namepage"/>
+        where="/namepage">
+          </HomeCard>
         <HomeCard 
         cardbg="#5C80BC"
         verbcolor="#5C80BC"
         heading="History of Asian Names"
         carddescription="Read history lessons on interesting origins of Asian names."
         verb="Read"
-        where="/history"/>
+        where="/history">
+          </HomeCard>
 
         <NavBar
           homebuttoncolor='#FC5F6C'
-          hometextcolor='#FC5F6C'
-       />
+          hometextcolor='#FC5F6C'>
+
+          </NavBar>
 
       </PageWrap>
 

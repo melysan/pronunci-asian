@@ -68,7 +68,7 @@ export const langListVietnamese = [
         articletext:`Vietnamese is always written in the order of surname, middle name, and then first name.
         Most Vietnamese have one middle name, but it is quite possible 
         to have two or more, or even no middle names at all. It might be 
-        because of their parents' personal preference, or a family's naming tradition.
+        because of their parents\' personal preference, or a family's naming tradition.
         If someone has a middle name, usually they are referred to as their first name only unless
         there are others who share the same first name. In this case, they will be referred to their middle and first name.
         `
@@ -81,10 +81,10 @@ export const langListJapanese = [
         articleimg:"/Coco_Chalkboard.svg",
         country:"Japanese",
         articletext:`If you have some experience with Japanese, you may have noticed that lots of Japanese titles start with “o.”
-         An “o” at the beginning of a Japanese title is usually an honorific prefix.
-        Removing the “o” makes the title more colloquial, and in some cases, rude.
+         An \“o\” at the beginning of a Japanese title is usually an honorific prefix.
+        Removing the \“o\” makes the title more colloquial, and in some cases, rude.
         For example, the word for mother, with Japanese honorifics, is oka-san. 
-        Without the prefix, it becomes ka-san, which is more like “mom” than “mother.”
+        Without the prefix, it becomes ka-san, which is more like \“mom\” than \“mother.\”
         Keep this in mind as you learn about Japanese honorific suffixes.`
     },
 
@@ -119,9 +119,9 @@ export const langListKorean = [
         country:"Korean",
         articletext:`The usage of names is governed by strict norms in traditional Korean society.
          It is generally considered rude to address people by their given names in Korean culture.
-          This is particularly the case when dealing with adults or one's elders.
+          This is particularly the case when dealing with adults or one\'s elders.
            It is acceptable to call someone by his or her given name if he or she is the same age
-            as the speaker. However, it is considered rude to use someone's given name if that person's 
+            as the speaker. However, it is considered rude to use someone\'s given name if that person\'s 
             age is a year older than the speaker.`
     },
 ]

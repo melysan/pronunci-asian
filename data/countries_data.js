@@ -1,18 +1,18 @@
 export const Countries = [
     {
         country: "Chinese",
-        image: '/Chinese Coco.svg',
+        image: '/Chinese_Coco.svg',
     },
     {
         country: "Japanese",
-        image: '/Japanese Coco.svg ',
+        image: '/Japanese_Coco.svg ',
     },
     {
         country: "Korean",
-        image: '/Korean Coco.svg',
+        image: '/Korean_Coco.svg',
     },
     {
         country: "Vietnamese",
-        image: '/Vietnamese Coco.svg',
+        image: '/Vietnamese_Coco.svg',
     },
 ]

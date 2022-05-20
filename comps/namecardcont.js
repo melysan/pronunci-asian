@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import { FavButton } from '../comps/pronunicationcont.js'
-// import VietName from "../data/vietname_data.json"
-import { VietName } from '../data/Name_data.js';
 
 let NameCardBg = styled.div`
 width: 330px;
@@ -14,6 +12,18 @@ margin: 30px;
 padding: 7px;
 box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 display:flex;
+
+&:hover { 
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;   
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05);
+    100% { transform: scale(1); }
+    }
+  }
 `;
 
 let CountryHeading = styled.h2`

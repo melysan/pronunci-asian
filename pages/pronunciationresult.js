@@ -5,7 +5,7 @@ import TopBar from '../comps/TopBar'
 import NavBar from '../comps/NavBar';
 import React, { useState } from 'react';
 import PronounciationContSlider from "../comps/contslider";
-import { ChineseName, VietName,KoreanName,JapaneseName, Names } from "../data/Name_data";
+import {Names } from "../data/name_data";
 import { useRouter } from 'next/router'
 
 

@@ -1,14 +1,11 @@
 // import SearchBar from "../comps/searchbar"
 import Header from "../comps/Header"
 import NameCard from "../comps/namecardcont"
-import styles from '../styles/Home.module.css'
-import SearchBar from '../comps/SearchBar'
 import TopBar from '../comps/TopBar'
 import { useRouter } from 'next/router'
 import NavBar from '../comps/NavBar';
 import { PageWrap } from "../comps/SetComps"
-// import VietName from "../data/vietname_data.json"
-import { ChineseName, JapaneseName, KoreanName, Names, VietName } from '../data/Name_data.js'
+import { ChineseName, JapaneseName, KoreanName, VietName } from '../data/name_data.js'
 
 import { lightTheme, darkTheme } from "../comps/darkmode"
 import { useState, useEffect } from 'react';
@@ -83,12 +80,14 @@ function NamePageResults() {
           ))}
 
 
+
           <NavBar namebuttoncolor='#FC5F6C'
             nametextcolor='#FC5F6C'>
           </NavBar>
         </PageWrap>
-      </div>
+            </div>
 
+      
 
 
 	</ThemeProvider>

@@ -102,6 +102,8 @@ const NavBarButton4 = styled.div`
         }`
 const Icon = styled.img`
 margin-top: 5px;
+width: 50px;
+height: 50px;
 `
 
 export default function NavBar({
@@ -141,7 +143,7 @@ export default function NavBar({
 
             <NavBarButton5 onClick={() => r.push("/settings")}
             setbutton_color={setbuttoncolor}
-            settext_color={settextcolor}><Icon src="/cog.svg" />Settings</NavBarButton5>
+            settext_color={settextcolor}><Icon src="/New_Cog.svg" />Settings</NavBarButton5>
         </NavBarButtonContainer>
 
     </NavBarBG>

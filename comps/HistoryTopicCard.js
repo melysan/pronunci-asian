@@ -50,6 +50,8 @@ font-weight: bold;`
 
 const Flag = styled.img`
 position: relative;
+width: 50px;
+height: 50px;
 left: 65%;
 top: 20%;
 content:url("${props=>props.flag_img}");
@@ -58,7 +60,7 @@ content:url("${props=>props.flag_img}");
 export default function HistoryTopicCard({
     topiccolor="#5C80BC",
     lang="Chinese",
-    flagimg="/CH_FLAG.svg",
+    flagimg="/China_Flag.svg",
     bgimg="/Coco_China_Pattern.svg",
     where=""
     

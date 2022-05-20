@@ -2,7 +2,6 @@ import FlagCont from '../comps/countriescont'
 // import Link from 'next/link'
 import Header from '../comps/Header'
 import styles from '../styles/Home.module.css'
-import SearchBar from '../comps/SearchBar'
 // import { useRouter } from 'next/router'
 import TopBar from '../comps/TopBar'
 import NavBar from '../comps/NavBar';
@@ -60,13 +59,15 @@ export default function CountriesOptions() {
         <PageWrap>
             <TopBar
                 backto="/homescreen" />
-            <Header h1='Topics'></Header>
+            <Header h1='Name Topics'></Header>
             <div className={styles.gridcontainer}>
 
-            {Countries.map((item) =>
+                {Countries.map((item, index) =>
+                    <div key={index}>
                         <FlagCont text={item.country} img={item.image}>
                         </FlagCont>
-                 )}
+                    </div>
+                )}
             </div>
             <NavBar namebuttoncolor='#FC5F6C'
                 nametextcolor='#FC5F6C'>

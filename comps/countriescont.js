@@ -1,13 +1,24 @@
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import Link  from 'next/link'
-import { VietName, JapaneseName, KoreanName, ChineseName} from '../data/Name_data.js'
 // let Heading = styled.h1 `color:#5C80BC; font-size: 24px;`;
 
 let Cont = styled.div` 
 &:hover {
     color:#FC5F6C;
-}`; 
+}
+
+&:hover { 
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;   
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05);
+    100% { transform: scale(1); }
+    }
+  }`; 
 
 let BgCont = styled.div`
 background-color:${props=>props.cl};

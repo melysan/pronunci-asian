@@ -16,29 +16,12 @@ export default function PronounciationSoundCont () {
     const r = useRouter();
     var { page, index } = r.query;
 
-    // var detailsToShow = null;
-    
-    // if(page){
-    //     detailsToShow = Names[page][index];
-    // }
-
-
-    // // if (page) {
-    // //     console.log(Names[page][index]);
-    // // }
-
-    // const audioPlay = () => {
-    //     var aud = document.querySelector("audio");
-    //     aud.play();
-    
-    // }
 
      // const volfunc = (num)=>{
     //     var aud = document.querySelector("audio");
     //     aud.volume = num/10 ;
     //
 
-    // }
 
 
     const [theme, setTheme] = useState('light');

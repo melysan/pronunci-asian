@@ -14,7 +14,8 @@ export default function PronunciationPage() {
     //     console.log(Names[page][index])
     // }
 
-
+    if(!Names[page]){ return null;}
+    
     return <div>
         <style>@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap');</style>
 

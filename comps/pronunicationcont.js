@@ -150,9 +150,9 @@ color:${props => props.txt_cl};
 // }
 
 export function FavButton() {
-    const [img, setImg] = useState("/favorite_button.svg");
+    const [img, setImg] = useState("/fave_button.svg");
 
-    return <StarIcon src={img ? '/favorite_button.svg' : '/selected_favebutton.svg'}
+    return <StarIcon src={img ? '/fave_button.svg' : '/selected_favebutton.svg'}
         onClick={() => setImg(img ? false : true)}
     ></StarIcon>
 }
@@ -162,7 +162,7 @@ export function Coco() {
     var {page, index} = r.query;
 
     return <CocoCont>
-        <CocoHead src="/cocoicon.svg" onClick={() => r.push({pathname:'/pronunciationresult', query:{page:page, id:index}})}></CocoHead>
+        <CocoHead src="/New_Coco_Head.svg" onClick={() => r.push({pathname:'/pronunciationresult', query:{page:page, id:index}})}></CocoHead>
             <Redcircle></Redcircle>
     </CocoCont>
 }

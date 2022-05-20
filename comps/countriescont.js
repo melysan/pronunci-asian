@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import Link  from 'next/link'
-import { VietName, JapaneseName, KoreanName, ChineseName} from '../data/Name_data.js'
 // let Heading = styled.h1 `color:#5C80BC; font-size: 24px;`;
 
 let Cont = styled.div` 

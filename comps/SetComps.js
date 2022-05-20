@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Subhead } from './IntroText';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 export const SetHead = styled.h1`
     font-size: ${props => props.fontSize || '24px'};
@@ -95,6 +96,7 @@ const FavImg = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 26px;
+    cursor: pointer;
 `
 export const PageWrap = styled.div`
     display: flex;
@@ -108,6 +110,100 @@ export const PageWrap2 = styled(PageWrap)`
 `;
 
 
+///////Switch Stuff//////
+
+const Label = styled.label`
+  display: flex;
+  align-items: center;
+//   gap: 10px;
+    padding: 20px;
+  cursor: pointer;
+`;
+
+const Switch = styled.div`
+  position: relative;
+  width: 34px;
+  height: 14px;
+  background: #b3b3b3;
+  border-radius: 32px;
+  padding: 4px;
+  transition: 300ms all;
+
+  &:before {
+    box-shadow: 0px 0.1px 0.3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    transition: 300ms all;
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 35px;
+    top: 50%;
+    left: 0px;
+    background: white;
+    transform: translate(0, -50%);
+    display: flex;
+    alighn-items: center;
+  }
+`;
+
+const Input = styled.input`
+  opacity: 0;
+  position: absolute;
+
+  &:checked + ${Switch} {
+    background: #FF3333;
+
+    &:before {
+      transform: translate(15px, -50%);
+    }
+  }
+`;
+
+
+
+////////////////////////
+
+
+
+
+export const SwitchCont = styled.div`
+    padding: 20px;
+`;
+
+export const SwitchBox = styled.div`
+    background: ${props => props.bg || '#AAA'}; //active = #CCF, inactice = #CCC
+    width: 34px;
+    height: 14px;
+    display: flex;
+    border-radius: 25px;
+    align-items: center;
+    transition: left 0.3s, background 0.3s;
+`;
+
+export const Tog = styled.div`
+    background: ${props => props.bg}; //active = #AAF, inactive = #AAA
+    box-shadow: 0px 0.1px 0.3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: relative;
+    left: ${props => props.left || '0px'}; //active = 50px, inactive 0px;
+    transition: left 0.3s, background 0.3s;
+`;
+
+const switch_data = {
+    active: { 
+      boxbg:'#FF3333',
+      togglebg: '#FF3333',
+      toggleleft: '17px'
+    },
+    inactive: {
+      boxbg:'#CCC',
+      togglebg: '#FFFFFF',
+      toggleleft: '0px'
+    }
+  }
+
 export function Head({
     txt='lorem',
     margin='',
@@ -118,9 +214,54 @@ export function Head({
 ){
     return (
     <SetHead h1margin={margin} headColor={color} h1Weight={weight} fontSize={size}>{txt}</SetHead>
-)
+)}
 
-}
+
+
+
+// export function Switch({
+//     active=false
+// }){
+//     const [switchState, setSwitch] = useState('inactive');
+
+//     useEffect(()=>{
+//         if (active === true){
+//             setSwitch('active');
+//         } else {
+//             setSwitch('inactive');
+//         }
+
+//     }, [active]);
+
+//     // useEffect(()=>{
+//     //     if(switchState === 'inactive'){
+//     //       onChange(false)
+//     //     } else {
+//     //       onChange(true)
+//     //     }
+//     //   });
+    
+
+//     return <SwitchCont>
+
+    
+//         <SwitchBox
+//         bg={switch_data[switchState].boxbg}
+//         >
+
+//             <Tog
+//             bg={switch_data[switchState].togglebg}
+//             left={switch_data[switchState].toggleleft}
+//             onClick={
+//                 () => setSwitch(switchState === 'inactive' ? 'active' : 'inactive')
+//             }
+//             />
+
+//         </SwitchBox>
+
+//     </SwitchCont>
+
+// }
 
 export function Subhead2({
     txt='lorem'
@@ -144,15 +285,57 @@ export function Volume (){
 
 export function Toggle ({
     txt='Sound',
-    margin='2em'
+    margin='2em',
+    weight='400',
+    color='#FC5F6C',
+    // active=false,
+    toggleTheme,
+    onChange = () => {},
 }
 ){
+
+    // const [switchState, setSwitch] = useState('inactive');
+    // const [checked, setChecked]
+    // useEffect(()=>{
+    //     if (active === true){
+    //         setSwitch('active');
+    //     } else {
+    //         setSwitch('inactive');
+    //     }
+
+    // }, [true]);
+
+    // useEffect(() => {
+    //     if (switchState ==='inactive'){
+    //         onChange(false)
+    //     } else {
+    //         onChange(true)
+    //     }
+    // })
+
+
+
+    const [checked, setChecked] = useState(true);
+
+    const handleChange = (e) => {
+        setChecked(!checked);
+        console.log(e);
+        // setIsDarkMode();
+        toggleTheme();
+        // localStorage.setItem('theme', !theme)
+    }
+
     return <div>
         <Wrapper2>
-            <SetHead h1margin={margin}>{txt}</SetHead>
+            <SetHead h1margin={margin} h1Weight={weight} headColor={color}>{txt}</SetHead>
             <ItemWrap>
                 <Subhead txt='OFF' />
-                <Slider type='checkbox' />
+                <Label>
+                    {/* <span>Toggle is {checked ? "on" : "off"}</span> */}
+                    <Input checked={checked} type="checkbox" onChange={handleChange}/>
+                    <Switch />
+                </Label>
+
                 <Subhead txt='ON' />
             </ItemWrap>
         </Wrapper2>
@@ -164,7 +347,7 @@ export function Toggle ({
 export function DarkMode (){
     return <div>
         <Wrapper2>
-            <Head txt='Dark Mode' />
+            <SetHead txt='Dark Mode' />
             <ItemWrap>
                 <Subhead txt='OFF' />
                 <Slider type='checkbox' />
@@ -175,13 +358,18 @@ export function DarkMode (){
     </div>
 }
 
-export function TextSize (){
+export function TextSize (
+{    txt='Text Size',
+    weight='400',
+    color='#FC5F6C',
+    margin='2.8em'
+}){ 
     return <div>
         <Wrapper2>
-            <Head txt='Text Size'/>
+        <SetHead h1Weight={weight} h1margin={margin} headColor={color}>{txt}</SetHead>
             <Select>
                 <option value='' hidden>
-                    Fonts
+                     Large
                 </option>
                 <option value='1'>Large</option>
                 <option value='2'>Medium</option>
@@ -191,16 +379,23 @@ export function TextSize (){
 
     </div>
 }
-export function FontType (){
+export function FontType (
+    {txt='Font Type',
+    weight='400',
+    color='#FC5F6C',
+    margin='1em'
+}
+){
     return <div>
         <Wrapper2>
-            <Head txt='Font Type'/>
+        <SetHead h1Weight={weight} h1margin={margin} headColor={color}>{txt}</SetHead>
             <Select>
                 <option value='' hidden>
                     Sans Serif
                 </option>
-                <option value='1'>Serif</option>
-                <option value='2'>Comic Sans</option>
+                <option value='1'>Sans Serif</option>
+                <option value='2'>Serif</option>
+                <option value='3'>Comic Sans</option>
             </Select>
         </Wrapper2>
 

@@ -11,8 +11,8 @@ export default function Favourites(){
 
         <TopBar />
         <Head txt='Favourites' margin='9em' color='' weight=''/>
-        <FavRow where='history'/>
-        <FavRow topic='Name' article='Minh' img='/name.svg' where='namepage'/>
+        <FavRow where='history_article'/>
+        <FavRow topic='Name' article='Minh' img='/name.svg' where='namepronunication'/>
         <FavRow topic='Name' article='Yuki'language='Japanese' where='history'/> 
         <FavRow article='How to read the structure of Vietnamese names' where='history'/>
         <NavBar favebuttoncolor='#FC5F6C'

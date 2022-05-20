@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { useRouter } from 'next/router'
 import React, { useState } from 'react';
+import {FavButton} from '../comps/pronunicationcont.js'
 
 
 let BeigeCont = styled.div`
@@ -141,7 +142,7 @@ export default function PronounciationContSlider({ w = '330px', h = '250px', sub
     return <div>
         <BeigeCont widthsize={w} heightsize={h}>
             <CountryName txt_cl={cl}>{subheaderinfo = 'Vietnamese'}</CountryName>
-            <StarIcon src="/favorite_button.svg"></StarIcon>
+           <FavButton></FavButton>
             <Name txt_cl={'#FC5F6C'}>{subheaderinfo = 'Minh'}<Img src="/volumeup.svg"></Img></Name>
             <Pronounce>{infotxt = 'm-ing'}</Pronounce>
             <Volume></Volume>

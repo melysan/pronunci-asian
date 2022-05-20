@@ -1,3 +1,13 @@
 export const logo = [
-    '/logomain1.svg'
+    {
+        bunny: '/welcomebunny1.svg'
+    },
+
+    {
+        bunny: '/bunny2.svg'
+    },
+
+    {
+        bunny: '/bunny3.svg'
+    }
 ];

@@ -1,16 +1,10 @@
-import ToggleFav from "../comps/favorite_button";
-import React, { useState } from "react";
+import { Toggle2 } from '../comps/switch'
 
-function App() {
-  const [active, setActive] = useState(false);
 
-  const handleChangeActive = () => {
-    setActive((previousStar) => {
-      return !previousStar;
-    });
-  };
+export default function(){
 
     return <div>
-        <ToggleFav src={active} handleChangeActive={handleChangeActive}></ToggleFav>
-        </div>
+        <Toggle2 />
+
+    </div>
 }

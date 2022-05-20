@@ -1,7 +1,9 @@
 import styled from "styled-components"
 import { useRouter } from 'next/router'
 import { Volume } from '../comps/SetComps'
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { VietName } from "../data/Name_data.js";
+
 
 
 let BeigeCont = styled.div`
@@ -57,11 +59,31 @@ dislay:flex;
 height: 130px;
 justify-content: flex-end;
 margin-left: 145px;
+width: 130px;
+
 `;
 
 let CocoHead = styled.img`
 height: 165px;
 width: 200px;
+align-items: center;
+`;
+
+let Cont = styled.div`
+&:hover {
+    background-color:#F05F6D;
+}`;
+
+
+let Redcircle = styled.div`
+width: 135px;
+border-radius: 50%; 
+background-color: #FC5F6C;
+dislay: flex;
+height: 135px;
+align-items: center;
+margin-top: -145px;
+margin-left: 32px;
 `;
 
 let StarIcon = styled.img`
@@ -71,6 +93,10 @@ margin-left: 290px;
 margin-top: 17px;
 bottom: 0;
 `;
+
+
+// // color: ${props=> props.starcl || '#FFF'};
+// background-url: ${props=> props.starcl || '/selected_fav'};
 
 let CocoInfo = styled.p`
 position: absolute;
@@ -109,39 +135,55 @@ color:${props => props.txt_cl};
 `;
 
 
-function ClickCoco () {
-    const state = changecolor();
-}
+// function ClickCoco () {
+//     const state = changecolor();
+// }
 
+export function FavButton() {
+    const [img, setImg] = useState("/favorite_button.svg");
+
+    return <StarIcon src={img ? '/favorite_button.svg' : '/selected_favebutton.svg'}
+        onClick={() => setImg(img ? false : true)}
+    ></StarIcon>
+}
 
 export function Coco() {
     const r = useRouter();
 
     return <CocoCont>
-    <CocoHead src="/cocoicon.svg" onClick={() => r.push('/namepronunciation2')}></CocoHead>
-</CocoCont>
+        <CocoHead src="/cocoicon.svg" onClick={() => r.push('/namepronunciation2')}></CocoHead>
+            <Redcircle></Redcircle>
+    </CocoCont>
 }
 
-export default function PronounciationCont({ w = '330px', h = '250px', subheaderinfo = 'Info', infotxt = 'text', cl = '#5C80BC' }) {
+export default function PronounciationCont({ w = '330px', h = '250px', countryname = 'country', subheaderinfo = 'Info', nametxt = 'name', infotxt = 'text', cl = '#5C80BC' }) {
     const r = useRouter();
 
+    var {item} = r.query;
+
+
+    // var list = [];
+    // if (item === "Minh") {
+    //     list = VietName[0]
+    // } else 
+
+
     return <div>
-        <BeigeCont widthsize={w} heightsize={h}>
-            <CountryName txt_cl={cl}>{subheaderinfo = 'Vietnamese'}</CountryName>
-            <StarIcon src="/favorite_button.svg"></StarIcon>
-            <Name txt_cl={'#FC5F6C'}>{subheaderinfo = 'Minh'}</Name>
+        <BeigeCont widthsize={w} heightsize={h} >
+            <CountryName txt_cl={cl}>{countryname}</CountryName>
+
+            <FavButton></FavButton>
+
+            <Name txt_cl={'#FC5F6C'}> {nametxt}</Name>
             <Pronounce>{infotxt = 'm-ing'}</Pronounce>
             <CocoInfo txt_cl={cl}>{infotxt = 'Tap Coco to hear'}</CocoInfo>
             <CocoInfo2 txt_cl={cl}>{infotxt = ' pronounciation'}</CocoInfo2>
             <Coco></Coco>
-            {/* <CocoCont>
-                <CocoHead src="/cocoicon.svg" onClick={() => r.push('/namepronunciation2')}></CocoHead>
-            </CocoCont> */}
         </BeigeCont>
 
         <BeigeCont widthsize={w} heightsize={h = '110px'}>
             <Subheader txt_cl={cl}>{subheaderinfo = 'Origin of Minh'}</Subheader>
-            <Info>{infotxt = 'Region: Hồ Chí Minh' }</Info>
+            <Info>{infotxt = 'Region: Hồ Chí Minh'}</Info>
             <Info2>{infotxt = 'Period: 1890-1969'}</Info2>
         </BeigeCont>
 

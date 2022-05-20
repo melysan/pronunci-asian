@@ -53,7 +53,7 @@ font-weight: normal;
 `;
 
 let CocoCont = styled.div`
-dislay:flex;
+dislay:${props => props.display || 'flex'}
 height: 130px;
 justify-content: flex-end;
 margin-left: 145px;
@@ -151,6 +151,16 @@ color:${props => props.txt_cl};
 //     const state = changecolor();
 // }
 
+const switch_data = {
+    active: {
+      display:'flex'
+    },
+    inactive: {
+      display:'none'
+    }
+  }
+  
+
 export function FavButton() {
     const [img, setImg] = useState("/favebutton.svg");
 
@@ -159,15 +169,31 @@ export function FavButton() {
     ></StarIcon>
 }
 
+
+
+// export function Coco({ind}) {
+//     const r = useRouter();
+//     var {page} = r.query;
+
+//     const [active, setActive] = useState(active ? 'active' : 'inactive');
+
+//     return <CocoCont >
+//         <CocoHead src="/New_Coco_Head.svg" onClick={() => r.push({pathname:'/pronunciationresult', query:{page:page, index:ind}})}></CocoHead>
+//             <Redcircle></Redcircle>
+//     </CocoCont>
+// }
+
+
 export function Coco() {
     const r = useRouter();
     var {page, index} = r.query;
 
-    return <CocoCont>
-        <CocoHead src="/New_Coco_Head.svg" onClick={() => r.push({pathname:'/pronunciationresult', query:{page:page, id:index}})}></CocoHead>
+    return <CocoCont >
+        <CocoHead src="/New_Coco_Head.svg" onClick={() => r.push({pathname:'/pronunciationresult', query:{page:page, index:index}})}></CocoHead>
             <Redcircle></Redcircle>
     </CocoCont>
 }
+
 
 export default function PronounciationCont({ 
 w = '330px',
@@ -183,9 +209,6 @@ period='period',
 pronunciation='slay',
 }) 
 {
-    const r = useRouter();
-
-    var {page, item} = r.query;
 
 
     return <div>

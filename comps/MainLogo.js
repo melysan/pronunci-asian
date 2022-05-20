@@ -23,6 +23,18 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+&:hover { 
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;   
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05);
+    100% { transform: scale(1); }
+    }
+  }
+
 `; 
 
 const Img = styled.img`

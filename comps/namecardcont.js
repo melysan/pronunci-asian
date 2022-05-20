@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import { FavButton } from '../comps/pronunicationcont.js'
-// import VietName from "../data/vietname_data.json"
-import { VietName } from '../data/Name_data.js';
 
 let NameCardBg = styled.div`
 width: 330px;

@@ -2,7 +2,7 @@ export const KoreanName = [
     {
         Name: "Boram",
         Meaning: "The meaning of Boram means \"worthwhile\" and \"valuable\"",
-        Origin: "Region: Hồ Chí Minh",
+        Origin: "Region: Korea",
         Period: "Period: Unknown",
         Country: "Korea",
         Lang: "Korean",

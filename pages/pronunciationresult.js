@@ -1,13 +1,14 @@
 import { PageWrap, Volume, WrapPage } from "../comps/SetComps"
-import PronounciationCont from "../comps/pronunicationcont"
-import styles from '../styles/Home.module.css'
 import TopBar from '../comps/TopBar'
 import NavBar from '../comps/NavBar';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PronounciationContSlider from "../comps/contslider";
 import {Names } from "../data/name_data";
 import { useRouter } from 'next/router'
 
+import { lightTheme, darkTheme } from "../comps/darkmode"
+import { GlobalStyles } from '../comps/globalstyles';
+import { ThemeProvider } from "styled-components"
 
 
 
@@ -22,9 +23,9 @@ export default function PronounciationSoundCont () {
     // }
 
 
-    if (page) {
-        console.log(Names[page][index]);
-    }
+    // if (page) {
+    //     console.log(Names[page][index]);
+    // }
     // const func = () => {
     //     var aud = document.querySelector("audio");
     //     aud.play();
@@ -35,8 +36,39 @@ export default function PronounciationSoundCont () {
     //     var aud = document.querySelector("audio");
     //     aud.volume = num/10 ;
     //
+
     // }
-    return <div>
+
+
+    const [theme, setTheme] = useState('light');
+    const isDarkTheme = theme === "dark";
+
+
+    const themeToggler = () => {
+        theme === 'light' ? setTheme('dark') : setTheme('light');
+        const updatedTheme = isDarkTheme ? "light" : "dark";
+        setTheme(updatedTheme);
+        localStorage.setItem("theme", updatedTheme);
+    }
+
+
+    useEffect(() => {
+        const savedTheme = localStorage.getItem("theme");
+        const prefersDark =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (savedTheme && ["dark", "light"].includes(savedTheme)) {
+            setTheme(savedTheme);
+        } else if (prefersDark) {
+            setTheme("dark");
+        }
+    }, []);
+
+    if (!Names[page]) { return null; }
+
+    return <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+        <GlobalStyles />
+
                 <style>@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap');</style>
         {/* <slider onChange={
             (e)=>volfunc(e.target.value)
@@ -60,5 +92,5 @@ export default function PronounciationSoundCont () {
                 nametextcolor='#FC5F6C'>
             </NavBar>
         </PageWrap>
-    </div>
+    </ThemeProvider>
 }

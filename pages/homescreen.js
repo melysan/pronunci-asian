@@ -26,7 +26,7 @@ export default function Home() {
         backto="/">
         </TopBar>
         <Header
-          h1="Let's start">
+          h1="Let&apos;s start">
         </Header>
           
         <HomeCard 

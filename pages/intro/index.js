@@ -3,7 +3,7 @@ import { Logo  } from '../../comps/MainLogo'
 import { RedButton } from '../../comps/landingbuttons';
 import { WrapPage, PageWrap, PageWrap2 } from '../../comps/SetComps';
 import { logo } from '../../data/images'
-import { name, sub, intro, bold } from '../../data/name_data'
+import { name, sub, intro, bold } from '../../data/intro_data'
 
 import { useRouter } from 'next/router';
 

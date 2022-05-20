@@ -11,7 +11,7 @@ import NamePageResults from './namepageresult'
 import NameCard from '../comps/namecardcont'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { VietName } from '../data/Name_data'
+import { VietName } from '../data/name_data'
 
 import { lightTheme, darkTheme } from "../comps/darkmode"
 import { useState, useEffect } from 'react';

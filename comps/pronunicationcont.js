@@ -57,6 +57,7 @@ dislay:flex;
 height: 130px;
 justify-content: flex-end;
 margin-left: 145px;
+margin-top: 60px;
 width: 130px;
 &:hover { 
     animation: pulse 1s infinite;
@@ -73,7 +74,8 @@ width: 130px;
 
 let CocoHead = styled.img`
 height: 100px;
-width: 100px;
+width: 200px;
+margin-bottom: 25px;
 align-items: center;
 `;
 

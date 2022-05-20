@@ -5,7 +5,7 @@ import TopBar from '../comps/TopBar'
 import NavBar from '../comps/NavBar';
 import React, { useState } from 'react';
 import PronounciationContSlider from "../comps/contslider";
-import { ChineseName, VietName,KoreanName,JapaneseName } from "../data/Name_data";
+import { ChineseName, VietName,KoreanName,JapaneseName, Names } from "../data/Name_data";
 import { useRouter } from 'next/router'
 
 
@@ -13,8 +13,7 @@ import { useRouter } from 'next/router'
 
 export default function PronounciationSoundCont () {
     const r = useRouter();
-    
-    const {page, index} = r.query;
+    var { page, index } = r.query;
 
     // var detailsToShow = null;
     
@@ -22,6 +21,10 @@ export default function PronounciationSoundCont () {
     //     detailsToShow = Names[page][index];
     // }
 
+
+    if (page) {
+        console.log(Names, page, index);
+    }
     // const func = () => {
     //     var aud = document.querySelector("audio");
     //     aud.play();
@@ -43,9 +46,10 @@ export default function PronounciationSoundCont () {
         //      ()=>func()
         // }
         >
-            <TopBar backto="/namepageresult"></TopBar>
+            <TopBar backto="/namepage"></TopBar>
             {/* <audio src={detailsToShow.Audio} autoPlay /> */}
-            <PronounciationContSlider nametxt={page}></PronounciationContSlider>
+            <PronounciationContSlider 
+            ></PronounciationContSlider>
             <NavBar namebuttoncolor='#FC5F6C'
                 nametextcolor='#FC5F6C'>
             </NavBar>

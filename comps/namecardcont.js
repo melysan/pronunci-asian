@@ -40,10 +40,10 @@ margin-left: 280px;
 margin-top: 25px;
 `;
 
-export default function NameCard({ colorheading = '#5C80BC', country_txt = 'country', txtname = 'Name', index, txt='hi'}) {
+export default function NameCard({ colorheading = '#5C80BC', country_txt = 'country', txtname = 'Name', ind, txt='hi'}) {
     const r = useRouter();
 
-    var { item } = r.query;
+    var { item, page } = r.query;
 
     if (item === undefined) {
       item = 0;
@@ -51,7 +51,7 @@ export default function NameCard({ colorheading = '#5C80BC', country_txt = 'coun
 
     
     return <div>
-        <NameCardBg onClick={() => r.push( {pathname:'/namepronunication', query: {page:txtname} })} >  
+        <NameCardBg onClick={() => r.push( {pathname:'/namepronunication', query: {page:page, index:ind} })} >  
             <FavButton></FavButton>
             <CountryHeading countryheading_color={colorheading}>{country_txt}
                 <Name>{txtname}</Name>

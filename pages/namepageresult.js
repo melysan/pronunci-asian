@@ -13,7 +13,7 @@ import { ChineseName, JapaneseName, KoreanName, Names, VietName } from '../data/
 
 function NamePageResults() {
   const r = useRouter();
-  var { page, index } = r.query;
+  var { page} = r.query;
 
 
   // if( page === "Chinese") {
@@ -41,14 +41,14 @@ function NamePageResults() {
       <Header h1={page}></Header>
 
       {(page === "Chinese") && ChineseName.map((item, index) => (
-        <NameCard txtname={item.Name} country_txt={item.Country} />
+        <NameCard ind={index} txtname={item.Name} country_txt={item.Country} />
       ))}
       {(page === "Vietnamese") && VietName.map((item, index) => (
-        <NameCard txtname={item.Name} country_txt={item.Country} />
+        <NameCard ind={index} txtname={item.Name} country_txt={item.Country} />
       ))}{(page === "Japanese") && JapaneseName.map((item, index) => (
-        <NameCard txtname={item.Name} country_txt={item.Country} />
+        <NameCard ind={index} txtname={item.Name} country_txt={item.Country} />
       ))}{(page === "Korean") && KoreanName.map((item, index) => (
-        <NameCard txtname={item.Name} country_txt={item.Country} />
+        <NameCard ind={index} txtname={item.Name} country_txt={item.Country} />
       ))}
 
 

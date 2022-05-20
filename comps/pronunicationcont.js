@@ -121,16 +121,18 @@ font-size: 16px;
 display: flex;
 flex-wrap: wrap;
 margin: 9px;
+height: 0px;
 margin-bottom:  0px;
 color:${props => props.txt_cl};
 `;
 
 let Info2 = styled.p`
-padding-left: 15px;
 font-size: 16px;
 display: flex;
-flex-wrap: wrap;
-margin: 0px;
+padding-top: 10px;
+padding-right: 50px;
+margin: 9px;
+margin-left: 12px;
 color:${props => props.txt_cl};
 `;
 
@@ -149,9 +151,10 @@ export function FavButton() {
 
 export function Coco() {
     const r = useRouter();
+    var {page, index} = r.query;
 
     return <CocoCont>
-        <CocoHead src="/cocoicon.svg" onClick={() => r.push('/namepronunciation2')}></CocoHead>
+        <CocoHead src="/cocoicon.svg" onClick={() => r.push({pathname:'/pronunciationresult', query:{page:page, id:index}})}></CocoHead>
             <Redcircle></Redcircle>
     </CocoCont>
 }
@@ -165,7 +168,9 @@ nametxt = 'name',
 infotxt = 'text',
 cl = '#5C80BC',
 meaning='this is the meaning',
-origin='Origin'
+origin='Origin', 
+period='period',
+pronunciation='slay',
 }) 
 {
     const r = useRouter();
@@ -180,7 +185,7 @@ origin='Origin'
             <FavButton></FavButton>
 
             <Name txt_cl={'#FC5F6C'}> {nametxt}</Name>
-            <Pronounce>{infotxt = 'm-ing'}</Pronounce>
+            <Pronounce>{pronunciation}</Pronounce>
             <CocoInfo txt_cl={cl}>{infotxt = 'Tap Coco to hear'}</CocoInfo>
             <CocoInfo2 txt_cl={cl}>{infotxt = ' pronounciation'}</CocoInfo2>
             <Coco></Coco>
@@ -188,8 +193,8 @@ origin='Origin'
 
         <BeigeCont widthsize={w} heightsize={h = '110px'}>
             <Subheader txt_cl={cl}>{subheaderinfo = 'Origin of'} {nametxt}</Subheader>
-            <Info>{origin = 'Region: Hồ Chí Minh'}</Info>
-            <Info2>{infotxt = 'Period: 1890-1969'}</Info2>
+            <Info>{origin}</Info>
+            <Info2>{period}</Info2>
         </BeigeCont>
 
         <BeigeCont widthsize={w} heightsize={h = '176px'}>
@@ -198,3 +203,4 @@ origin='Origin'
         </BeigeCont>
     </div>
 }
+

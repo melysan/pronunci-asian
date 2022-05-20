@@ -88,15 +88,17 @@ display: flex;
 flex-wrap: wrap;
 margin: 9px;
 margin-bottom:  0px;
+height:0px;
 color:${props => props.txt_cl};
 `;
 
 let Info2 = styled.p`
-padding-left: 15px;
 font-size: 16px;
 display: flex;
-flex-wrap: wrap;
-margin: 0px;
+padding-top: 10px;
+padding-right: 50px;
+margin: 9px;
+margin-left: 12px;
 color:${props => props.txt_cl};
 `;
 
@@ -132,7 +134,7 @@ export function Coco() {
     const r = useRouter();
 
     return <CocoCont>
-    <CocoHead src="/cocoicon.svg" onClick={() => r.push('/namepronunciation2')}></CocoHead>
+    <CocoHead src="/cocoicon.svg" onClick={() => r.push('/namepronunciation2' )}></CocoHead>
 </CocoCont>
 }
 

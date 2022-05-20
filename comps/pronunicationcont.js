@@ -94,7 +94,7 @@ height: 135px;
 align-items: center;
 margin-top: -145px;
 margin-left: 32px;
-`;
+box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;`;
 
 let StarIcon = styled.img`
 height: 28px;

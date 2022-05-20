@@ -141,7 +141,7 @@ export default function NavBar({
 
             <NavBarButton5 onClick={() => r.push("/settings")}
             setbutton_color={setbuttoncolor}
-            settext_color={settextcolor}><Icon src="/cog.svg" />Settings</NavBarButton5>
+            settext_color={settextcolor}><Icon src="/New_Cog.svg" />Settings</NavBarButton5>
         </NavBarButtonContainer>
 
     </NavBarBG>

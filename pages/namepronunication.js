@@ -11,9 +11,9 @@ import { GlobalStyles } from '../comps/globalstyles';
 import { ThemeProvider } from "styled-components"
 
 
-export default function PronunciationPage({ind}) {
+export default function PronunciationPage() {
     const r = useRouter();
-    var { page, index, id } = r.query;
+    var { page, index} = r.query;
 
     // if (page) {
 

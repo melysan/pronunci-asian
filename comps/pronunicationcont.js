@@ -151,15 +151,6 @@ color:${props => props.txt_cl};
 //     const state = changecolor();
 // }
 
-const switch_data = {
-    active: {
-      display:'flex'
-    },
-    inactive: {
-      display:'none'
-    }
-  }
-  
 
 export function FavButton() {
     const [img, setImg] = useState("/favebutton.svg");

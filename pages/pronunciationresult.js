@@ -18,18 +18,19 @@ export default function PronounciationSoundCont () {
 
     // var detailsToShow = null;
     
-    // if(page === "Chinese"){
+    // if(page){
     //     detailsToShow = Names[page][index];
     // }
 
 
-    // if (page) {
-    //     console.log(Names[page][index]);
-    // }
-    // const func = () => {
+    // // if (page) {
+    // //     console.log(Names[page][index]);
+    // // }
+
+    // const audioPlay = () => {
     //     var aud = document.querySelector("audio");
     //     aud.play();
-    //
+    
     // }
 
      // const volfunc = (num)=>{
@@ -81,6 +82,7 @@ export default function PronounciationSoundCont () {
             <TopBar backto="/namepage"></TopBar>
             {/* <audio src={detailsToShow.Audio} autoPlay /> */}
             <PronounciationContSlider 
+
             nametxt={Names[page][index].Name}
                 countryname={Names[page][index].Lang}
                 meaning={Names[page][index].Meaning}

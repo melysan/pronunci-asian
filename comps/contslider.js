@@ -149,19 +149,30 @@ export default function PronounciationContSlider({
     meaning='this is the meaning',
     origin='Origin', 
     period='period',
-    pronunciation='slay',
-    ind
+    pronunciation='slay'
     }) 
     {
         
-    const r = useRouter();
+    // const r = useRouter();
+
+    const audioPlay = () => {
+        var aud =  new Audio('cocoa.mp3');
+        aud.play();
+    }    
+
+    // const audioPlay = () => {
+    //     var aud = document.querySelector('audio');
+    //     aud.play();
+    // }
 
 return <div>
 <BeigeCont widthsize={w} heightsize={h} >
     <CountryName txt_cl={cl}>{countryname}</CountryName>
 
     <FavButton></FavButton>
-    <Name txt_cl={'#FC5F6C'}>{nametxt}<Img src="/volumeup.svg"></Img></Name>    <Pronounce>{pronunciation}</Pronounce>
+    <Name txt_cl={'#FC5F6C'}>{nametxt}
+    <Img src="/volumeup.svg" onClick={audioPlay}></Img></Name>    
+    <Pronounce>{pronunciation}</Pronounce>
     <Pronounce>{pronunciation}</Pronounce>
     <Volume></Volume>
 </BeigeCont>
